@@ -6,4 +6,6 @@ The app randomly generates an animal image, shows its name and plays its sound.
 ## Contact
 [gustavocardoso@gmail.com](mailto://gustavocardoso@gmail.com)
 
+Please, feel free to clone and make your changes!!!
+
 **:)**
