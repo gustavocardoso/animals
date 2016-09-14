@@ -1,0 +1,6 @@
+.animals {
+  @extend %basic-screen;
+  background: #999;
+  z-index: 3;
+  display: none;
+}

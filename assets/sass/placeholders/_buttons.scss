@@ -1,0 +1,15 @@
+%basic-button {
+  color: $button-text-color;
+  background: $button-background-color;
+  border: none;
+  border-radius: $button-border-radius;
+  padding: $button-padding;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  
+  &:hover {
+    color: $button-text-hover-color;
+    text-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+    background: $button-background-hover-color;
+  }
+}

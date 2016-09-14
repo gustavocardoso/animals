@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+@import 'config';
+
+@import 'placeholders/basics';
+@import 'placeholders/buttons';
+
+@import 'intro';
+@import 'animals';
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+body {
+  height: 100%;
+  font: normal normal normal 16px/1.4 'Open Sans', sans-serif;
+  background: #FCFFF7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  &:before {
+    display: none;
+    content: 'mobile';
+  }
+}
+
+h1, h2, h3 {
+  font-family: 'Henny Penny', cursive;
+}
+
+p {
+  font-family: 'Special Elite';
+}
+
+.container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+  z-index: 1;
+}
+
+@media(min-width: $media-desktop) {
+  body:before {
+    display: none;
+    content: 'desktop';
+  }
+}
