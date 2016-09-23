@@ -11,12 +11,18 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     gutil = require('gulp-util'),
     path = require('path'),
-    size = require('gulp-size');
+    size = require('gulp-size'),
+    browserify = require('browserify'),
+    babelify = require('babelify'),
+    source = require('vinyl-source-stream'),
+    streamify = require('gulp-streamify');
 
 var path = {
   sass: 'assets/sass',
   css: 'assets/css',
-  js: 'assets/js'
+  js: 'assets/js',
+  svgSrc: 'assets/images/animals/icons',
+  svgDest: 'assets/images/icons'
 };
 
 var sassOptions = {
@@ -63,22 +69,15 @@ gulp.task('sass-map', function() {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src(path.js + '/src/app.js')
-  .pipe(babel({
-    presets: ['es2015']
-  }))
-  .pipe(jshint('.jshintrc'))
-  .pipe(jshint.reporter('jshint-stylish'))
-  .pipe(concat('application.js'))
-  .pipe(gulp.dest(path.js))
-  .pipe(rename({suffix: '.min'}))
-  .pipe(uglify())
-  .pipe(gulp.dest(path.js))
-  .pipe(notify({ message: 'Scripts task complete' }));
+  return browserify({entries: path.js + '/src/application.js', extensions: ['.js'], debug: true})
+  .transform(babelify.configure({presets : ["es2015"]}))
+  .bundle()
+  .pipe(source('application.js'))
+  .pipe(gulp.dest(path.js));
 });
 
 gulp.task('scripts-map', function() {
-  return gulp.src(path.js + '/src/app.js')
+  return gulp.src(path.js + '/src/**/*.js')
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('jshint-stylish'))
   .pipe(sourcemaps.init())
@@ -92,11 +91,13 @@ gulp.task('scripts-map', function() {
 });
 
 gulp.task('scripts-hint', ['scripts'], function() {
-  return gulp.src(path.js + '/app.js')
-  .pipe(jshint('.jshintrc'))
-  .pipe(jshint.reporter('jshint-stylish'))
-  .pipe(notify({ message: 'Script hint task complete' }));
+  // return gulp.src(path.js + '/app.js')
+  // .pipe(jshint('.jshintrc'))
+  // .pipe(jshint.reporter('jshint-stylish'))
+  // .pipe(notify({ message: 'Script hint task complete' }));
 });
+
+gulp.task('sprite', ['pngSprite']);
 
 gulp.task('default', function() {
   gulp.start(['styles', 'scripts', 'scripts-hint']);
@@ -108,5 +109,5 @@ gulp.task('styles', function() {
 
 gulp.task('watch', function() {
   gulp.watch(path.sass + '/**/*.scss', ['sass']);
-  gulp.watch(path.js + '/src/*.js', ['scripts', 'scripts-hint']);
+  gulp.watch(path.js + '/src/**/*.js', ['scripts', 'scripts-hint']);
 });
