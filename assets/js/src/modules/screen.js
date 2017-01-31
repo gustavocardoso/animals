@@ -10,6 +10,7 @@ export default class Screen {
   }
 
   start() {
+    this.hideScreen(this.getCurrentScreen())
     this.setCurrentScreen('app')
     this.showCurrentScreen()
   }
@@ -24,13 +25,12 @@ export default class Screen {
 
   showCurrentScreen() {
     let screen = this.getCurrentScreen()
-    this.hideCurrentScreen()
     document.querySelector('.' + screen).classList.add('active')
     this.setCurrentScreen(screen)
   }
 
-  hideCurrentScreen() {
-    let current = this.getCurrentScreen()
+  hideScreen(screen) {
+    let current = screen
     document.querySelector('.' + current).classList.remove('active')
   }
 
