@@ -15,7 +15,9 @@ block content
 
       h2(class="name") Welcome
 
-      audio(class="player", type="audio/mpeg", src="/audio/audio.mp3")
+      audio(class="player")
+        source(src="/audio/animals.mp3", type="audio/mpeg")
+        source(src="/audio/animals.ogg", type="audio/ogg")
 
     section(class="controls")
       div(class="control-button")
