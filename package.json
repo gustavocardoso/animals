@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "bundle": "webpack-dev-server ./src/js/app-src.js"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
@@ -14,5 +15,23 @@
     "morgan": "~1.7.0",
     "node-sass-middleware": "0.9.8",
     "serve-favicon": "~2.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^3.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-util": "^3.0.8",
+    "gulp-webpack": "^1.5.0",
+    "path": "^0.12.7",
+    "webpack": "^2.2.1"
   }
 }
