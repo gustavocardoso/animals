@@ -81,11 +81,16 @@ BuildApp.prototype = {
     let animations = ['shuffle', 'shuffle-alt']
     let randomAnimation = Math.floor(Math.random() * animations.length)
 
+    if (!obj.player.paused) {
+      obj.player.pause()
+      obj.player.currentTime = 0
+    }
+
     if (document.querySelector('.animal .instructions') != null) {
       obj.thumbBox.removeChild(obj.instructions)
     }
 
-    let thumb = document.querySelector('.animal .animal-thumb')
+    let thumb = document.querySelector('.animal-thumb')
 
     if (thumb != null) {
       obj.thumbBox.removeChild(thumb)
@@ -118,6 +123,24 @@ BuildApp.prototype = {
 
     obj.thumbBox.classList.remove(animations[randomAnimation])
     obj.animalName.classList.remove('fade')
+
+    delete obj.player.ontimeupdate
+
+    obj.setSound(obj, animal)
+    obj.player.play()
+  },
+
+  setSound: (obj, animal) => {
+    let timeInit = animal.sound.word.start
+    let timeEnd = animal.sound.word.end
+
+    obj.player.currentTime = timeInit
+
+    obj.player.ontimeupdate = () => {
+      if (obj.player.currentTime > timeEnd) {
+        obj.player.pause()
+      }
+    }
   }
 }
 
