@@ -46,11 +46,19 @@
       padding: 1em;
 
       &.shuffle {
-        animation: shuffle ease .4s forwards;
+        -webkit-animation: .4s ease 1 forwards shuffle;
+        -moz-animation: .4s ease 1 forwards shuffle;
+        -ms-animation: .4s ease 1 forwards shuffle;
+        -o-animation: .4s ease 1 forwards shuffle;
+        animation: .4s ease 1 forwards shuffle;
       }
 
       &.shuffle-alt {
-        animation: shuffleAlt ease .4s forwards;
+        -webkit-animation: .4s ease 1 forwards shuffleAlt;
+        -moz-animation: .4s ease 1 forwards shuffleAlt;
+        -ms-animation: .4s ease 1 forwards shuffleAlt;
+        -o-animation: .4s ease 1 forwards shuffleAlt;
+        animation: .4s ease 1 forwards shuffleAlt;
       }
     }
 

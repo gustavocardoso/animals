@@ -28,6 +28,7 @@ function BuildApp(name) {
   this.thumbBox = document.querySelector('.thumb-box')
   this.btnStart = document.querySelector('.start-app')
   this.btnShuffle = document.querySelector('.shuffle')
+  this.player = document.querySelector('.player')
 
   const obj = this
   this.init(obj)
@@ -46,7 +47,7 @@ BuildApp.prototype = {
       if (!obj.started) {
         obj.start(obj)
       }
-    })
+    }, false)
   },
 
   manageInitialEvents: (obj) => {
@@ -65,7 +66,7 @@ BuildApp.prototype = {
 
     obj.btnShuffle.addEventListener('click', () => {
       obj.shuffle(obj)
-    })
+    }, false)
 
     window.addEventListener('keyup', function(event) {
       if (event.keyCode == 32) {
@@ -95,14 +96,12 @@ BuildApp.prototype = {
 
     let animal = zoo.getRandomAnimal()
 
-    obj.thumbBox.addEventListener("animationend", () => {
-      obj.thumbBox.classList.remove(animations[randomAnimation])
-      obj.animalName.classList.remove('fade')
-      obj.createAnimal(obj, animal)
-    }, false);
+    let time = setTimeout(() => {
+      obj.thumbBox.addEventListener('animationend', obj.createAnimal(obj, animal, animations, randomAnimation), false);
+    }, 300)
   },
 
-  createAnimal: (obj, animal) => {
+  createAnimal: (obj, animal, animations, randomAnimation) => {
     let thumb = document.createElement('img')
 
     if (obj.thumbBox.querySelector('.animal-thumb') != null) {
@@ -113,8 +112,12 @@ BuildApp.prototype = {
     thumb.setAttribute('src', obj.thumbPath + '/' + animal.image)
     thumb.setAttribute('alt', animal.name)
     thumb.setAttribute('class', 'animal-thumb')
+
     obj.thumbBox.appendChild(thumb)
     obj.animalName.innerHTML = animal.name
+
+    obj.thumbBox.classList.remove(animations[randomAnimation])
+    obj.animalName.classList.remove('fade')
   }
 }
 

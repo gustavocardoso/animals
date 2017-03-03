@@ -9,7 +9,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -23,7 +23,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -37,7 +37,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -51,7 +51,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -65,7 +65,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -79,7 +79,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -93,7 +93,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -107,7 +107,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -121,7 +121,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -135,7 +135,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -149,7 +149,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -159,11 +159,11 @@ module.exports = [
     sound: {
       word: {
         start: 18.909,
-        end: 18.885
+        end: 19.846
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -177,7 +177,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -191,7 +191,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -204,8 +204,8 @@ module.exports = [
         end: 24.588
       },
       sound: {
-        start: 25.544,
-        end: 26.261
+        start: 0,
+        end: 0
       }
     }
   },
@@ -214,12 +214,12 @@ module.exports = [
     image: 'pig.svg',
     sound: {
       word: {
-        start: 26.939,
-        end: 27.676
+        start: 25.539,
+        end: 26.244
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -233,7 +233,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   },
@@ -247,7 +247,7 @@ module.exports = [
       },
       sound: {
         start: 0,
-        end: 
+        end: 0
       }
     }
   }
