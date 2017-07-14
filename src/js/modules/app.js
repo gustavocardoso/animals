@@ -28,7 +28,8 @@ function BuildApp(name) {
   this.thumbBox = document.querySelector('.thumb-box')
   this.btnStart = document.querySelector('.start-app')
   this.btnShuffle = document.querySelector('.shuffle')
-  this.player = document.querySelector('.player')
+  this.playerWord = document.querySelector('.player-word')
+  this.playerSound = document.querySelector('.player-sound')
 
   const obj = this
   this.init(obj)
@@ -81,9 +82,9 @@ BuildApp.prototype = {
     let animations = ['shuffle', 'shuffle-alt']
     let randomAnimation = Math.floor(Math.random() * animations.length)
 
-    if (!obj.player.paused) {
-      obj.player.pause()
-      obj.player.currentTime = 0
+    if (!obj.playerWord.paused) {
+      obj.playerWord.pause()
+      obj.playerWord.currentTime = 0
     }
 
     if (document.querySelector('.animal .instructions') != null) {
@@ -114,7 +115,7 @@ BuildApp.prototype = {
       obj.thumbBox.removeChild(oldThumb)
     }
     
-    thumb.setAttribute('src', obj.thumbPath + '/' + animal.image)
+    thumb.setAttribute('src', obj.thumbPath + '/' + animal.file + '.svg')
     thumb.setAttribute('alt', animal.name)
     thumb.setAttribute('class', 'animal-thumb')
 
@@ -124,23 +125,54 @@ BuildApp.prototype = {
     obj.thumbBox.classList.remove(animations[randomAnimation])
     obj.animalName.classList.remove('fade')
 
-    delete obj.player.ontimeupdate
+    delete obj.playerWord.ontimeupdate
+
+    obj.setWord(obj, animal)
+    obj.playerWord.play()
 
     obj.setSound(obj, animal)
-    obj.player.play()
+  },
+
+  setWord: (obj, animal) => {
+    let timeInit = animal.audio.word.start
+    let timeEnd = animal.audio.word.end
+
+    obj.playerWord.currentTime = timeInit
+
+    obj.playerWord.ontimeupdate = () => {
+      if (obj.playerWord.currentTime > timeEnd) {
+        obj.playerWord.pause()
+      }
+    }
   },
 
   setSound: (obj, animal) => {
-    let timeInit = animal.sound.word.start
-    let timeEnd = animal.sound.word.end
-
-    obj.player.currentTime = timeInit
-
-    obj.player.ontimeupdate = () => {
-      if (obj.player.currentTime > timeEnd) {
-        obj.player.pause()
-      }
+    while (obj.playerSound.hasChildNodes()) {
+      obj.playerSound.removeChild(obj.playerSound.lastChild)
     }
+
+    const audioFormats = [
+      {
+        type: 'audio/mp3',
+        format: 'mp3'
+      },
+      {
+        type: 'audio/ogg',
+        format: 'ogg'
+      }
+    ]
+    
+    audioFormats.forEach((element, index) => {
+      let soundElement = document.createElement('source')
+      let soundSrc = `/audio/animals/${animal.file}.${element.format}`
+
+      soundElement.setAttribute('src', soundSrc)
+      soundElement.setAttribute('type', element.type)
+
+      obj.playerSound.appendChild(soundElement)
+
+      obj.playerSound.load()
+    });
   }
 }
 

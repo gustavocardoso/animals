@@ -1,8 +1,22 @@
 module.exports = [
   {
+    name: 'Bird',
+    file: 'bird',
+    audio: {
+      word: {
+        start: 0,
+        end: 0.757
+      },
+      sound: {
+        start: 0,
+        end: 0
+      }
+    }
+  },
+  {
     name: 'Cat',
-    image: 'cat.svg',
-    sound: {
+    file: 'cat',
+    audio: {
       word: {
         start: 0,
         end: 0.757
@@ -15,8 +29,8 @@ module.exports = [
   },
   {
     name: 'Cow',
-    image: 'cow.svg',
-    sound: {
+    file: 'cow',
+    audio: {
       word: {
         start: 1.674,
         end: 2.451
@@ -29,8 +43,8 @@ module.exports = [
   },
   {
     name: 'Dog',
-    image: 'dog.svg',
-    sound: {
+    file: 'dog',
+    audio: {
       word: {
         start: 3.367,
         end: 4.184
@@ -43,8 +57,8 @@ module.exports = [
   },
   {
     name: 'Dolphin',
-    image: 'dolphin.svg',
-    sound: {
+    file: 'dolphin',
+    audio: {
       word: {
         start: 5.181,
         end: 6.117
@@ -56,23 +70,9 @@ module.exports = [
     }
   },
   {
-    name: 'Dove',
-    image: 'dove.svg',
-    sound: {
-      word: {
-        start: 6.914,
-        end: 7.691
-      },
-      sound: {
-        start: 0,
-        end: 0
-      }
-    }
-  },
-  {
     name: 'Duck',
-    image: 'duck.svg',
-    sound: {
+    file: 'duck',
+    audio: {
       word: {
         start: 8.548,
         end: 9.345
@@ -85,8 +85,8 @@ module.exports = [
   },
   {
     name: 'Elephant',
-    image: 'elephant.svg',
-    sound: {
+    file: 'elephant',
+    audio: {
       word: {
         start: 10.202,
         end: 11.178
@@ -99,8 +99,8 @@ module.exports = [
   },
   {
     name: 'Frog',
-    image: 'frog.svg',
-    sound: {
+    file: 'frog',
+    audio: {
       word: {
         start: 12.015,
         end: 12.692
@@ -113,8 +113,8 @@ module.exports = [
   },
   {
     name: 'Hen',
-    image: 'hen.svg',
-    sound: {
+    file: 'hen',
+    audio: {
       word: {
         start: 13.669,
         end: 14.326
@@ -127,8 +127,8 @@ module.exports = [
   },
   {
     name: 'Horse',
-    image: 'horse.svg',
-    sound: {
+    file: 'horse',
+    audio: {
       word: {
         start: 15.362,
         end: 16.279
@@ -141,8 +141,8 @@ module.exports = [
   },
   {
     name: 'Lion',
-    image: 'lion.svg',
-    sound: {
+    file: 'lion',
+    audio: {
       word: {
         start: 17.116,
         end: 17.893
@@ -155,8 +155,8 @@ module.exports = [
   },
   {
     name: 'Macaw',
-    image: 'macaw.svg',
-    sound: {
+    file: 'macaw',
+    audio: {
       word: {
         start: 18.909,
         end: 19.846
@@ -169,8 +169,8 @@ module.exports = [
   },
   {
     name: 'Monkey',
-    image: 'monkey.svg',
-    sound: {
+    file: 'monkey',
+    audio: {
       word: {
         start: 20.503,
         end: 21.419
@@ -183,8 +183,8 @@ module.exports = [
   },
   {
     name: 'Mouse',
-    image: 'mouse.svg',
-    sound: {
+    file: 'mouse',
+    audio: {
       word: {
         start: 22.256,
         end: 23.033
@@ -197,8 +197,8 @@ module.exports = [
   },
   {
     name: 'Owl',
-    image: 'owl.svg',
-    sound: {
+    file: 'owl',
+    audio: {
       word: {
         start: 23.870,
         end: 24.588
@@ -211,8 +211,8 @@ module.exports = [
   },
   {
     name: 'Pig',
-    image: 'pig.svg',
-    sound: {
+    file: 'pig',
+    audio: {
       word: {
         start: 25.539,
         end: 26.244
@@ -224,9 +224,37 @@ module.exports = [
     }
   },
   {
+    name: 'Rooster',
+    file: 'rooster',
+    audio: {
+      word: {
+        start: 25.539,
+        end: 26.244
+      },
+      sound: {
+        start: 0,
+        end: 0
+      }
+    }
+  },
+  {
+    name: 'Sheep',
+    file: 'sheep',
+    audio: {
+      word: {
+        start: 26.979,
+        end: 27.736
+      },
+      sound: {
+        start: 0,
+        end: 0
+      }
+    }
+  },
+  {
     name: 'Snake',
-    image: 'snake.svg',
-    sound: {
+    file: 'snake',
+    audio: {
       word: {
         start: 26.979,
         end: 27.736
@@ -239,8 +267,8 @@ module.exports = [
   },
   {
     name: 'Whale',
-    image: 'whale.svg',
-    sound: {
+    file: 'whale',
+    audio: {
       word: {
         start: 28.632,
         end: 29.450
