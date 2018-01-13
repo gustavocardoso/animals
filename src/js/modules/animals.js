@@ -1,5 +1,19 @@
 module.exports = [
   {
+    name: 'Bear',
+    file: 'bear',
+    audio: {
+      word: {
+        start: 0,
+        end: 0.757
+      },
+      sound: {
+        start: 0,
+        end: 0
+      }
+    }
+  },
+  {
     name: 'Bird',
     file: 'bird',
     audio: {
@@ -14,8 +28,36 @@ module.exports = [
     }
   },
   {
+    name: 'Camel',
+    file: 'camel',
+    audio: {
+      word: {
+        start: 0,
+        end: 0.757
+      },
+      sound: {
+        start: 0,
+        end: 0
+      }
+    }
+  },
+  {
     name: 'Cat',
     file: 'cat',
+    audio: {
+      word: {
+        start: 0,
+        end: 0.757
+      },
+      sound: {
+        start: 0,
+        end: 0
+      }
+    }
+  },
+  {
+    name: 'Chicken',
+    file: 'chicken',
     audio: {
       word: {
         start: 0,
@@ -70,6 +112,20 @@ module.exports = [
     }
   },
   {
+    name: 'Dove',
+    file: 'dove',
+    audio: {
+      word: {
+        start: 5.181,
+        end: 6.117
+      },
+      sound: {
+        start: 0,
+        end: 0
+      }
+    }
+  },
+  {
     name: 'Duck',
     file: 'duck',
     audio: {
@@ -112,12 +168,40 @@ module.exports = [
     }
   },
   {
-    name: 'Hen',
-    file: 'hen',
+    name: 'Goat',
+    file: 'goat',
     audio: {
       word: {
         start: 13.669,
         end: 14.326
+      },
+      sound: {
+        start: 0,
+        end: 0
+      }
+    }
+  },
+  {
+    name: 'Goose',
+    file: 'goose',
+    audio: {
+      word: {
+        start: 13.669,
+        end: 14.326
+      },
+      sound: {
+        start: 0,
+        end: 0
+      }
+    }
+  },
+  {
+    name: 'Hamster',
+    file: 'hamster',
+    audio: {
+      word: {
+        start: 15.362,
+        end: 16.279
       },
       sound: {
         start: 0,
@@ -258,20 +342,6 @@ module.exports = [
       word: {
         start: 26.979,
         end: 27.736
-      },
-      sound: {
-        start: 0,
-        end: 0
-      }
-    }
-  },
-  {
-    name: 'Whale',
-    file: 'whale',
-    audio: {
-      word: {
-        start: 28.632,
-        end: 29.450
       },
       sound: {
         start: 0,
