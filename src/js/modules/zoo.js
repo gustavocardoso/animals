@@ -1,9 +1,9 @@
 export default class Zoo {
-  constructor(animals) {
+  constructor (animals) {
     this.animals = animals || []
   }
 
-  getRandomAnimal() {
+  getRandomAnimal () {
     let randomKey = Math.floor(Math.random() * this.animals.length)
     return this.animals[randomKey]
   }

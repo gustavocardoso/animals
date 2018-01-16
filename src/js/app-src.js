@@ -1,5 +1,5 @@
 import App from './modules/app'
 
 (() => {
-  let myApp = App('Pet Sounds')
+  App('Pet Sounds')
 })()

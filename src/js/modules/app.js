@@ -2,23 +2,23 @@
 //   navigator.serviceWorker.register('/sw.js')
 //   .then(function(reg) {
 //     // registration worked
-//     console.log('Registration succeeded. Scope is ' + reg.scope);
+//     console.log('Registration succeeded. Scope is ' + reg.scope)
 //   }).catch(function(error) {
 //     // registration failed
-//     console.log('Registration failed with ' + error);
-//   });
+//     console.log('Registration failed with ' + error)
+//   })
 // }
 
-import Screen from "./screen"
-import Animals from "./animals"
-import Zoo from "./zoo"
+import Screen from './screen'
+import Animals from './animals'
+import Zoo from './zoo'
 
-let screen = new Screen
+let screen = new Screen()
 const animals = Animals
 const zoo = new Zoo(animals)
 
-function BuildApp(name) {
-  this.name = name;
+function BuildApp (name) {
+  this.name = name
   this.started = false
   this.thumbPath = '/images/animals'
 
@@ -37,7 +37,6 @@ function BuildApp(name) {
 
 BuildApp.prototype = {
   init: (obj) => {
-
     screen.init()
 
     obj.eManage = obj.manageInitialEvents.bind(this, obj)
@@ -51,8 +50,8 @@ BuildApp.prototype = {
     }, false)
   },
 
-  manageInitialEvents: (obj) => {
-    if (event.keyCode == 32) {
+  manageInitialEvents: (obj, event) => {
+    if (event.keyCode === 32) {
       if (!obj.started) {
         obj.start(obj)
       }
@@ -69,10 +68,10 @@ BuildApp.prototype = {
       obj.shuffle(obj)
     }, false)
 
-    window.addEventListener('keyup', function(event) {
-      if (event.keyCode == 32) {
-        
-      } else if (event.keyCode == 83) {
+    window.addEventListener('keyup', function (event) {
+      if (event.keyCode === 32) {
+
+      } else if (event.keyCode === 83) {
         obj.shuffle(obj)
       }
     }, false)
@@ -87,7 +86,7 @@ BuildApp.prototype = {
       obj.playerWord.currentTime = 0
     }
 
-    if (document.querySelector('.animal .instructions') != null) {
+    if (document.querySelector('.animal .instructions') !== null) {
       obj.thumbBox.removeChild(obj.instructions)
     }
 
@@ -102,8 +101,8 @@ BuildApp.prototype = {
 
     let animal = zoo.getRandomAnimal()
 
-    let time = setTimeout(() => {
-      obj.thumbBox.addEventListener('animationend', obj.createAnimal(obj, animal, animations, randomAnimation), false);
+    setTimeout(() => {
+      obj.thumbBox.addEventListener('animationend', obj.createAnimal(obj, animal, animations, randomAnimation), false)
     }, 300)
   },
 
@@ -114,7 +113,7 @@ BuildApp.prototype = {
       let oldThumb = obj.thumbBox.querySelector('.animal-thumb')
       obj.thumbBox.removeChild(oldThumb)
     }
-    
+
     thumb.setAttribute('src', obj.thumbPath + '/' + animal.file + '.svg')
     thumb.setAttribute('alt', animal.name)
     thumb.setAttribute('class', 'animal-thumb')
@@ -161,7 +160,7 @@ BuildApp.prototype = {
         format: 'ogg'
       }
     ]
-    
+
     audioFormats.forEach((element, index) => {
       let soundElement = document.createElement('source')
       let soundSrc = `/audio/animals/${animal.file}.${element.format}`
@@ -172,12 +171,12 @@ BuildApp.prototype = {
       obj.playerSound.appendChild(soundElement)
 
       obj.playerSound.load()
-    });
+    })
   }
 }
 
-function App(name) {
-  return new BuildApp(name);
+function App (name) {
+  return new BuildApp(name)
 }
 
-module.exports = App;
+export default App
