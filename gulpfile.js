@@ -70,10 +70,10 @@ gulp.task('sass-map', () => {
 gulp.task('scripts', ['eslint'], () => {
   const debug = process.env.NODE_ENV !== 'production'
 
-  return gulp.src(paths.jsSrc + '/app-src.js')
+  return gulp.src(paths.jsSrc + '/app.js')
     .pipe(webpackStream({
       context: __dirname,
-      devtool: debug ? 'inline-sourcemap' : null,
+      devtool: debug ? 'source-map' : false,
       output: {
         filename: 'bundle.min.js'
       },
