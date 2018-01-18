@@ -204,8 +204,8 @@ export default [
         end: 42.770
       },
       sound: {
-        start: 29.249,
-        end: 30.899
+        start: 41.333,
+        end: 42.860
       }
     }
   },
