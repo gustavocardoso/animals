@@ -2,7 +2,7 @@ import Screen from './modules/screen'
 import Animals from './modules/animals'
 import Zoo from './modules/zoo'
 
-let screen = new Screen()
+const screen = new Screen()
 const animals = Animals
 const zoo = new Zoo(animals)
 
@@ -18,6 +18,7 @@ class App {
     this.thumbBox = document.querySelector('.thumb-box')
     this.btnStart = document.querySelector('.start-app')
     this.btnShuffle = document.querySelector('.shuffle')
+    this.btnPlay = document.querySelector('.play')
     this.playerWord = document.querySelector('.player-word')
     this.playerSound = document.querySelector('.player-sound')
   }
@@ -51,7 +52,6 @@ class App {
 
     window.addEventListener('keyup', (event) => {
       if (event.keyCode === 32) {
-        console.log('pohan')
       } else if (event.keyCode === 83) {
         this.shuffle()
       }
@@ -59,9 +59,10 @@ class App {
   }
 
   shuffle () {
-    console.log('shuffle')
     let animations = ['shuffle', 'shuffle-alt']
     let randomAnimation = Math.floor(Math.random() * animations.length)
+
+    this.btnPlay.classList.add('disabled')
 
     if (!this.playerWord.paused) {
       this.playerWord.pause()
@@ -89,7 +90,6 @@ class App {
   }
 
   createAnimal (animal, animations, randomAnimation) {
-    console.log(animal)
     let thumb = document.createElement('img')
 
     if (this.thumbBox.querySelector('.animal-thumb') != null) {
@@ -110,9 +110,15 @@ class App {
     delete this.playerWord.ontimeupdate
 
     this.setWord(animal)
-    this.playerWord.play()
+
+    setTimeout(() => {
+      this.playerWord.play()
+    }, 300)
+
+    delete this.playerSound.ontimeupdate
 
     this.setSound(animal)
+    // this.playerSound.play()
   }
 
   setWord (animal) {
@@ -129,32 +135,24 @@ class App {
   }
 
   setSound (animal) {
-    while (this.playerSound.hasChildNodes()) {
-      this.playerSound.removeChild(this.playerSound.lastChild)
-    }
+    let timeInit = animal.audio.sound.start
+    let timeEnd = animal.audio.sound.end
 
-    const audioFormats = [
-      {
-        type: 'audio/mp3',
-        format: 'mp3'
-      },
-      {
-        type: 'audio/ogg',
-        format: 'ogg'
-      }
-    ]
+    this.playerSound.currentTime = timeInit
+    this.btnPlay.classList.remove('disabled')
 
-    audioFormats.forEach((element, index) => {
-      let soundElement = document.createElement('source')
-      let soundSrc = `/audio/animals/${animal.file}.${element.format}`
-
-      soundElement.setAttribute('src', soundSrc)
-      soundElement.setAttribute('type', element.type)
-
-      this.playerSound.appendChild(soundElement)
-
-      this.playerSound.load()
+    this.btnPlay.addEventListener('click', () => {
+      this.playerSound.play()
+      this.btnPlay.classList.add('disabled')
     })
+
+    this.playerSound.ontimeupdate = () => {
+      if (this.playerSound.currentTime > timeEnd) {
+        this.playerSound.pause()
+        this.playerSound.currentTime = timeInit
+        this.btnPlay.classList.remove('disabled')
+      }
+    }
   }
 }
 
