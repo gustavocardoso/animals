@@ -9,7 +9,7 @@ export default [
       },
       sound: {
         start: 0,
-        end: 0
+        end: 3.000
       }
     }
   },
@@ -22,8 +22,8 @@ export default [
         end: 0.757
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 4.041,
+        end: 7.800
       }
     }
   },
@@ -36,8 +36,8 @@ export default [
         end: 0.757
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 8.788,
+        end: 11.284
       }
     }
   },
@@ -50,8 +50,8 @@ export default [
         end: 0.757
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 12.000,
+        end: 15.002
       }
     }
   },
@@ -64,8 +64,8 @@ export default [
         end: 0.757
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 16.005,
+        end: 17.829
       }
     }
   },
@@ -78,8 +78,8 @@ export default [
         end: 2.451
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 18.868,
+        end: 21.205
       }
     }
   },
@@ -92,8 +92,8 @@ export default [
         end: 4.184
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 21.996,
+        end: 23.737
       }
     }
   },
@@ -106,8 +106,8 @@ export default [
         end: 6.117
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 24.444,
+        end: 26.260
       }
     }
   },
@@ -120,8 +120,8 @@ export default [
         end: 6.117
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 26.993,
+        end: 28.380
       }
     }
   },
@@ -134,8 +134,8 @@ export default [
         end: 9.345
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 29.285,
+        end: 30.440
       }
     }
   },
@@ -148,8 +148,8 @@ export default [
         end: 11.178
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 31.278,
+        end: 32.470
       }
     }
   },
@@ -162,8 +162,8 @@ export default [
         end: 12.692
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 33.451,
+        end: 35.700
       }
     }
   },
@@ -176,8 +176,8 @@ export default [
         end: 14.326
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 36.500,
+        end: 37.936
       }
     }
   },
@@ -190,8 +190,8 @@ export default [
         end: 14.326
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 38.792,
+        end: 40.380
       }
     }
   },
@@ -200,12 +200,12 @@ export default [
     file: 'hamster',
     audio: {
       word: {
-        start: 15.362,
-        end: 16.279
+        start: 41.300,
+        end: 42.770
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 29.249,
+        end: 30.899
       }
     }
   },
@@ -218,8 +218,8 @@ export default [
         end: 16.279
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 44.000,
+        end: 47.235
       }
     }
   },
@@ -232,8 +232,8 @@ export default [
         end: 17.893
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 48.030,
+        end: 51.025
       }
     }
   },
@@ -246,8 +246,8 @@ export default [
         end: 19.846
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 52.004,
+        end: 53.700
       }
     }
   },
@@ -260,8 +260,8 @@ export default [
         end: 21.419
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 54.500,
+        end: 55.958
       }
     }
   },
@@ -274,8 +274,8 @@ export default [
         end: 23.033
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 56.935,
+        end: 60.033
       }
     }
   },
@@ -288,8 +288,8 @@ export default [
         end: 24.588
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 61.072,
+        end: 64.274
       }
     }
   },
@@ -302,8 +302,8 @@ export default [
         end: 26.244
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 65.287,
+        end: 67.704
       }
     }
   },
@@ -316,8 +316,8 @@ export default [
         end: 26.244
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 68.850,
+        end: 71.457
       }
     }
   },
@@ -330,8 +330,8 @@ export default [
         end: 27.736
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 72.670,
+        end: 73.813
       }
     }
   },
@@ -344,8 +344,8 @@ export default [
         end: 27.736
       },
       sound: {
-        start: 0,
-        end: 0
+        start: 75.000,
+        end: 77.900
       }
     }
   }

@@ -2,7 +2,7 @@ import Screen from './modules/screen'
 import Animals from './modules/animals'
 import Zoo from './modules/zoo'
 
-let screen = new Screen()
+const screen = new Screen()
 const animals = Animals
 const zoo = new Zoo(animals)
 
@@ -110,9 +110,12 @@ class App {
     delete this.playerWord.ontimeupdate
 
     this.setWord(animal)
-    this.playerWord.play()
+    // this.playerWord.play()
+
+    delete this.playerSound.ontimeupdate
 
     this.setSound(animal)
+    this.playerSound.play()
   }
 
   setWord (animal) {
@@ -129,32 +132,16 @@ class App {
   }
 
   setSound (animal) {
-    while (this.playerSound.hasChildNodes()) {
-      this.playerSound.removeChild(this.playerSound.lastChild)
-    }
+    let timeInit = animal.audio.sound.start
+    let timeEnd = animal.audio.sound.end
 
-    const audioFormats = [
-      {
-        type: 'audio/mp3',
-        format: 'mp3'
-      },
-      {
-        type: 'audio/ogg',
-        format: 'ogg'
+    this.playerSound.currentTime = timeInit
+
+    this.playerSound.ontimeupdate = () => {
+      if (this.playerSound.currentTime > timeEnd) {
+        this.playerSound.pause()
       }
-    ]
-
-    audioFormats.forEach((element, index) => {
-      let soundElement = document.createElement('source')
-      let soundSrc = `/audio/animals/${animal.file}.${element.format}`
-
-      soundElement.setAttribute('src', soundSrc)
-      soundElement.setAttribute('type', element.type)
-
-      this.playerSound.appendChild(soundElement)
-
-      this.playerSound.load()
-    })
+    }
   }
 }
 
