@@ -69,6 +69,11 @@ class App {
       this.playerWord.currentTime = 0
     }
 
+    if (!this.playerSound.paused) {
+      this.playerSound.pause()
+      this.playerSound.currentTime = 0
+    }
+
     if (document.querySelector('.animal .instructions') !== null) {
       this.thumbBox.removeChild(this.instructions)
     }
