@@ -21,24 +21,35 @@ class App {
     this.btnPlay = document.querySelector('.play')
     this.playerWord = document.querySelector('.player-word')
     this.playerSound = document.querySelector('.player-sound')
+    this.soundReady = false
   }
 
   init () {
     screen.init()
 
-    window.addEventListener('keyup', (event) => {
-      if (event.keyCode === 32) {
-        if (!this.started) {
-          this.start()
-        }
-      }
-    }, false)
+    window.addEventListener('keyup', this.manageKeyEvents.bind(this), false)
 
     this.btnStart.addEventListener('click', () => {
       if (!this.started) {
         this.start()
       }
     }, false)
+  }
+
+  manageKeyEvents (event) {
+    if (event.keyCode === 32) {
+      if (!this.started) {
+        this.start()
+      }
+    } else if (event.keyCode === 83) {
+      if (this.started) {
+        this.shuffle()
+      }
+    } else if (event.keyCode === 80) {
+      if (this.started && this.soundReady) {
+        this.playerSound.play()
+      }
+    }
   }
 
   start () {
@@ -49,13 +60,6 @@ class App {
     this.btnShuffle.addEventListener('click', () => {
       this.shuffle()
     }, false)
-
-    window.addEventListener('keyup', (event) => {
-      if (event.keyCode === 32) {
-      } else if (event.keyCode === 83) {
-        this.shuffle()
-      }
-    }, false)
   }
 
   shuffle () {
@@ -63,10 +67,16 @@ class App {
     let randomAnimation = Math.floor(Math.random() * animations.length)
 
     this.btnPlay.classList.add('disabled')
+    this.soundReady = false
 
     if (!this.playerWord.paused) {
       this.playerWord.pause()
       this.playerWord.currentTime = 0
+    }
+
+    if (!this.playerSound.paused) {
+      this.playerSound.pause()
+      this.playerSound.currentTime = 0
     }
 
     if (document.querySelector('.animal .instructions') !== null) {
@@ -115,10 +125,7 @@ class App {
       this.playerWord.play()
     }, 300)
 
-    delete this.playerSound.ontimeupdate
-
     this.setSound(animal)
-    // this.playerSound.play()
   }
 
   setWord (animal) {
@@ -140,6 +147,8 @@ class App {
 
     this.playerSound.currentTime = timeInit
     this.btnPlay.classList.remove('disabled')
+
+    this.soundReady = true
 
     this.btnPlay.addEventListener('click', () => {
       this.playerSound.play()
