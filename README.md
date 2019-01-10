@@ -9,6 +9,10 @@ Just clone the project and install all the dependencies with npm. Then, run the 
 
 ![alt text](https://raw.githubusercontent.com/gustavocardoso/animals/master/public/images/screenshots/pet-sounds-1.png)
 
+### Playing
+
+Just press the **start button** or **space bar** to start. On the main screen, press **s** (or shuffle button) to shuffle an animal. To play the animal sound just press **p** (or play button).
+
 ![alt text](https://raw.githubusercontent.com/gustavocardoso/animals/master/public/images/screenshots/pet-sounds-2.png)
 
 ## Contact
