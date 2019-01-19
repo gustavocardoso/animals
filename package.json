@@ -1,0 +1,28 @@
+{
+  "name": "animals",
+  "version": "1.0.0",
+  "description": "A simple app to teach children about animals and their sounds",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavocardoso/animals.git"
+  },
+  "keywords": [
+    "animals",
+    "sound",
+    "teach",
+    "children",
+    "javascript",
+    "css",
+    "html"
+  ],
+  "author": "Gustavo Cardoso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavocardoso/animals/issues"
+  },
+  "homepage": "https://github.com/gustavocardoso/animals#readme"
+}
