@@ -1,0 +1,151 @@
+.app {
+  @extend %basic-screen;
+  justify-content: space-between;
+  background: url('../images/backgrounds/intro-mobile.jpg') center center no-repeat #8EA604;
+  z-index: 3;
+  display: none;
+
+  .page-title {
+    @extend %page-title;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 1em;
+    animation: pulseSlow 10s ease infinite;
+  }
+
+  .animal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .instructions {
+      font-size: .8em;
+      color: #555;
+
+      span {
+        font-weight: 700;
+      }
+    }
+
+    .thumb-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 175px;
+      height: 175px;
+      background-color: #eee;
+      background-size: 109px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      border-radius: 25%;
+      border: 5px solid #ccc;
+      box-shadow: 0 -5px 15px 0 rgba(0, 0, 0, 0.2);
+      padding: 1em;
+
+      &.shuffle {
+        -webkit-animation: .4s ease 1 forwards shuffle;
+        -moz-animation: .4s ease 1 forwards shuffle;
+        -ms-animation: .4s ease 1 forwards shuffle;
+        -o-animation: .4s ease 1 forwards shuffle;
+        animation: .4s ease 1 forwards shuffle;
+      }
+
+      &.shuffle-alt {
+        -webkit-animation: .4s ease 1 forwards shuffleAlt;
+        -moz-animation: .4s ease 1 forwards shuffleAlt;
+        -ms-animation: .4s ease 1 forwards shuffleAlt;
+        -o-animation: .4s ease 1 forwards shuffleAlt;
+        animation: .4s ease 1 forwards shuffleAlt;
+      }
+    }
+
+    .thumb {
+      width: 109px;
+      height: 109px;
+    }
+
+    .name {
+      font-size: 4em;
+      font-weight: 900;
+      text-align: center;
+      text-shadow:
+             3px 3px 0 rgba(0, 0, 0, 0.5),
+           -1px -1px 0 rgba(0, 0, 0, 0.7),  
+            1px -1px 0 rgba(0, 0, 0, 0.7),
+            -1px 1px 0 rgba(0, 0, 0, 0.7),
+             1px 1px 0 rgba(0, 0, 0, 0.7);
+      color: #eee;
+    }
+
+    .fade {
+      animation: fadeOut ease .4s;
+    }
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .control-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .play, .shuffle {
+      @extend %basic-control-button;
+      color: #ccc;
+      padding: 1em;
+
+      &.disabled {
+        opacity: .5;
+      }
+
+      &:hover {
+        background: #000;
+      }
+
+      &:active {
+        background: #BF3100;
+      }
+    }
+
+    .icon-play {
+      font-size: 5em;
+    }
+
+    .icon-refresh {
+      font-size: 5em;
+    }
+
+    .button-text {
+      font-size: .8em;
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.5);
+      margin-top: .4em;
+    }
+  }
+}
+
+@media(min-width: $media-desktop) {
+  .app {
+    background-image: url('../images/backgrounds/intro.jpg');
+
+    .page-title {
+      font-size: 4em;
+      margin-top: .8em;
+    }
+
+    .animal {
+      .name {
+        font-size: 5em;
+      }
+    }
+  }
+}

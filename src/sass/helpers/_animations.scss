@@ -1,0 +1,111 @@
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1) rotate(-1.8deg);
+  }
+
+  50% {
+    transform: scale3d(1.4, 1.4, 1.4) rotate(-1.8deg);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1) rotate(-1.8deg);
+  }
+}
+
+@keyframes pulseSlow {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes shuffle {
+  0% {
+    background-image: url('../images/animals/dog.svg');
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+
+  20% {
+    background-image: url('../images/animals/cow.svg');
+  }
+
+  40% {
+    background-image: url('../images/animals/dove.svg');
+  }
+
+  60% {
+    background-image: url('../images/animals/frog.svg');
+    transform: scale3d(1.1, 1.1, 1.1);
+    opacity: .4;
+  }
+
+  80% {
+    background-image: url('../images/animals/pig.svg');
+  }
+
+  100% {
+    background-image: url('../images/animals/snake.svg');
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
+
+@keyframes shuffleAlt {
+  0% {
+    background-image: url('../images/animals/cat.svg');
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+
+  20% {
+    background-image: url('../images/animals/dolphin.svg');
+  }
+
+  40% {
+    background-image: url('../images/animals/duck.svg');
+  }
+
+  60% {
+    background-image: url('../images/animals/monkey.svg');
+    transform: scale3d(1.1, 1.1, 1.1);
+    opacity: .4;
+  }
+
+  80% {
+    background-image: url('../images/animals/owl.svg');
+  }
+
+  100% {
+    background-image: url('../images/animals/lion.svg');
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
