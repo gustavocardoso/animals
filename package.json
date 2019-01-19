@@ -4,7 +4,9 @@
   "description": "A simple app to teach children about animals and their sounds",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "NODE_ENV=production webpack --mode production",
+    "build-dev": "NODE_ENV=development webpack --mode development",
+    "dev": "NODE_ENV=development webpack-dev-server --open --mode development"
   },
   "repository": {
     "type": "git",
