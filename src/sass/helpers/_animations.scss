@@ -38,31 +38,31 @@
 
 @keyframes shuffle {
   0% {
-    background-image: url('../images/animals/dog.svg');
+    background-image: $dog;
     transform: scale3d(1, 1, 1);
     opacity: 1;
   }
 
   20% {
-    background-image: url('../images/animals/cow.svg');
+    background-image: $cow;
   }
 
   40% {
-    background-image: url('../images/animals/dove.svg');
+    background-image: $dove;
   }
 
   60% {
-    background-image: url('../images/animals/frog.svg');
+    background-image: $frog;
     transform: scale3d(1.1, 1.1, 1.1);
     opacity: .4;
   }
 
   80% {
-    background-image: url('../images/animals/pig.svg');
+    background-image: $pig;
   }
 
   100% {
-    background-image: url('../images/animals/snake.svg');
+    background-image: $snake;
     transform: scale3d(1, 1, 1);
     opacity: 1;
   }
@@ -70,31 +70,31 @@
 
 @keyframes shuffleAlt {
   0% {
-    background-image: url('../images/animals/cat.svg');
+    background-image: $cat;
     transform: scale3d(1, 1, 1);
     opacity: 1;
   }
 
   20% {
-    background-image: url('../images/animals/dolphin.svg');
+    background-image: $dolphin;
   }
 
   40% {
-    background-image: url('../images/animals/duck.svg');
+    background-image: $duck;
   }
 
   60% {
-    background-image: url('../images/animals/monkey.svg');
+    background-image: $monkey;
     transform: scale3d(1.1, 1.1, 1.1);
     opacity: .4;
   }
 
   80% {
-    background-image: url('../images/animals/owl.svg');
+    background-image: $owl;
   }
 
   100% {
-    background-image: url('../images/animals/lion.svg');
+    background-image: $lion;
     transform: scale3d(1, 1, 1);
     opacity: 1;
   }

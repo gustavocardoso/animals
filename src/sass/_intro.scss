@@ -2,7 +2,7 @@
   @extend %basic-screen;
   justify-content: center;
   text-align: center;
-  background: url('/images/backgrounds/intro-mobile.jpg') center center no-repeat #8EA604;
+  background: url('~imagesPath/backgrounds/intro-mobile.jpg') center center no-repeat #8EA604;
   padding: 2em;
   z-index: 2;
 
@@ -49,7 +49,7 @@
 
 @media(min-width: $media-desktop) {
   .intro {
-    background-image: url('/images/backgrounds/intro.jpg');
+    background-image: url('~imagesPath/backgrounds/intro.jpg');
 
     .page-title {
       font-size: 6em;

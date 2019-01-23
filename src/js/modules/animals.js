@@ -1,7 +1,33 @@
+import bear from 'imagesPath/animals/bear.svg'
+import bird from 'imagesPath/animals/bird.svg'
+import camel from 'imagesPath/animals/camel.svg'
+import cat from 'imagesPath/animals/cat.svg'
+import chicken from 'imagesPath/animals/chicken.svg'
+import cow from 'imagesPath/animals/cow.svg'
+import dog from 'imagesPath/animals/dog.svg'
+import dolphin from 'imagesPath/animals/dolphin.svg'
+import dove from 'imagesPath/animals/dove.svg'
+import duck from 'imagesPath/animals/duck.svg'
+import elephant from 'imagesPath/animals/elephant.svg'
+import frog from 'imagesPath/animals/frog.svg'
+import goat from 'imagesPath/animals/goat.svg'
+import goose from 'imagesPath/animals/goose.svg'
+import hamster from 'imagesPath/animals/hamster.svg'
+import horse from 'imagesPath/animals/horse.svg'
+import lion from 'imagesPath/animals/lion.svg'
+import macaw from 'imagesPath/animals/macaw.svg'
+import monkey from 'imagesPath/animals/monkey.svg'
+import mouse from 'imagesPath/animals/mouse.svg'
+import owl from 'imagesPath/animals/owl.svg'
+import pig from 'imagesPath/animals/pig.svg'
+import rooster from 'imagesPath/animals/rooster.svg'
+import sheep from 'imagesPath/animals/sheep.svg'
+import snake from 'imagesPath/animals/dog.svg'
+
 export default [
   {
     name: 'Bear',
-    file: 'bear',
+    file: bear,
     audio: {
       word: {
         start: 0,
@@ -15,7 +41,7 @@ export default [
   },
   {
     name: 'Bird',
-    file: 'bird',
+    file: bird,
     audio: {
       word: {
         start: 0,
@@ -29,7 +55,7 @@ export default [
   },
   {
     name: 'Camel',
-    file: 'camel',
+    file: camel,
     audio: {
       word: {
         start: 0,
@@ -43,7 +69,7 @@ export default [
   },
   {
     name: 'Cat',
-    file: 'cat',
+    file: cat,
     audio: {
       word: {
         start: 0,
@@ -57,7 +83,7 @@ export default [
   },
   {
     name: 'Chicken',
-    file: 'chicken',
+    file: chicken,
     audio: {
       word: {
         start: 0,
@@ -71,7 +97,7 @@ export default [
   },
   {
     name: 'Cow',
-    file: 'cow',
+    file: cow,
     audio: {
       word: {
         start: 1.674,
@@ -85,7 +111,7 @@ export default [
   },
   {
     name: 'Dog',
-    file: 'dog',
+    file: dog,
     audio: {
       word: {
         start: 3.367,
@@ -99,7 +125,7 @@ export default [
   },
   {
     name: 'Dolphin',
-    file: 'dolphin',
+    file: dolphin,
     audio: {
       word: {
         start: 5.181,
@@ -113,7 +139,7 @@ export default [
   },
   {
     name: 'Dove',
-    file: 'dove',
+    file: dove,
     audio: {
       word: {
         start: 5.181,
@@ -127,7 +153,7 @@ export default [
   },
   {
     name: 'Duck',
-    file: 'duck',
+    file: duck,
     audio: {
       word: {
         start: 8.548,
@@ -141,7 +167,7 @@ export default [
   },
   {
     name: 'Elephant',
-    file: 'elephant',
+    file: elephant,
     audio: {
       word: {
         start: 10.202,
@@ -155,7 +181,7 @@ export default [
   },
   {
     name: 'Frog',
-    file: 'frog',
+    file: frog,
     audio: {
       word: {
         start: 12.015,
@@ -169,7 +195,7 @@ export default [
   },
   {
     name: 'Goat',
-    file: 'goat',
+    file: goat,
     audio: {
       word: {
         start: 13.669,
@@ -183,7 +209,7 @@ export default [
   },
   {
     name: 'Goose',
-    file: 'goose',
+    file: goose,
     audio: {
       word: {
         start: 13.669,
@@ -197,7 +223,7 @@ export default [
   },
   {
     name: 'Hamster',
-    file: 'hamster',
+    file: hamster,
     audio: {
       word: {
         start: 41.300,
@@ -211,7 +237,7 @@ export default [
   },
   {
     name: 'Horse',
-    file: 'horse',
+    file: horse,
     audio: {
       word: {
         start: 15.362,
@@ -225,7 +251,7 @@ export default [
   },
   {
     name: 'Lion',
-    file: 'lion',
+    file: lion,
     audio: {
       word: {
         start: 17.116,
@@ -239,7 +265,7 @@ export default [
   },
   {
     name: 'Macaw',
-    file: 'macaw',
+    file: macaw,
     audio: {
       word: {
         start: 18.909,
@@ -253,7 +279,7 @@ export default [
   },
   {
     name: 'Monkey',
-    file: 'monkey',
+    file: monkey,
     audio: {
       word: {
         start: 20.503,
@@ -267,7 +293,7 @@ export default [
   },
   {
     name: 'Mouse',
-    file: 'mouse',
+    file: mouse,
     audio: {
       word: {
         start: 22.256,
@@ -281,7 +307,7 @@ export default [
   },
   {
     name: 'Owl',
-    file: 'owl',
+    file: owl,
     audio: {
       word: {
         start: 23.870,
@@ -295,7 +321,7 @@ export default [
   },
   {
     name: 'Pig',
-    file: 'pig',
+    file: pig,
     audio: {
       word: {
         start: 25.539,
@@ -309,7 +335,7 @@ export default [
   },
   {
     name: 'Rooster',
-    file: 'rooster',
+    file: rooster,
     audio: {
       word: {
         start: 25.539,
@@ -323,7 +349,7 @@ export default [
   },
   {
     name: 'Sheep',
-    file: 'sheep',
+    file: sheep,
     audio: {
       word: {
         start: 26.979,
@@ -337,7 +363,7 @@ export default [
   },
   {
     name: 'Snake',
-    file: 'snake',
+    file: snake,
     audio: {
       word: {
         start: 26.979,

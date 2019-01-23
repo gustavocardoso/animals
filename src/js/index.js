@@ -2,6 +2,8 @@ import Screen from './modules/screen'
 import Animals from './modules/animals'
 import Zoo from './modules/zoo'
 
+import './assets'
+
 const screen = new Screen()
 const animals = Animals
 const zoo = new Zoo(animals)

@@ -1,7 +1,7 @@
 .app {
   @extend %basic-screen;
   justify-content: space-between;
-  background: url('../images/backgrounds/intro-mobile.jpg') center center no-repeat #8EA604;
+  background: url('~imagesPath/backgrounds/intro-mobile.jpg') center center no-repeat #8EA604;
   z-index: 3;
   display: none;
 
@@ -9,7 +9,7 @@
     @extend %page-title;
     font-size: 3em;
     text-align: center;
-    margin-top: 1em;
+    margin-top: 2em;
     animation: pulseSlow 10s ease infinite;
   }
 
@@ -135,7 +135,7 @@
 
 @media(min-width: $media-desktop) {
   .app {
-    background-image: url('../images/backgrounds/intro.jpg');
+    background-image: url('~imagesPath/backgrounds/intro.jpg');
 
     .page-title {
       font-size: 4em;
