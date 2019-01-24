@@ -5,7 +5,8 @@ The app randomly generates an animal image, shows its name and plays its sound.
 
 ## Installing and running
 
-Just clone the project and install all the dependencies with npm. Then, run the app with **npm start** and point your browser to http://localhost:3000
+Just clone the project and install all the dependencies with npm.
+You can run it in development mode with **npm run dev** or you can build with **npm run build** (files will be placed on dist/ folder). 
 
 ![Screen 1](https://raw.githubusercontent.com/gustavocardoso/animals/master/public/images/screenshots/pet-sounds-1.png)
 
