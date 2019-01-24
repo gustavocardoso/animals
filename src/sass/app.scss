@@ -2,6 +2,7 @@
 
 @import './config';
 
+
 @import './vendor/icomoon';
 
 @import './placeholders/basics';
@@ -31,8 +32,8 @@ html {
 
 body {
   height: 100%;
-  font: normal normal normal 16px/1.4 'Open Sans', sans-serif;
-  background: $body-default-background-color;
+  font: normal normal normal 16px/1.4 $font-family-base;
+  background-image: $body-default-background-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
@@ -43,7 +44,7 @@ body {
 }
 
 h1 {
-  font-family: 'Henny Penny', cursive;
+  font-family: $font-family-special;
 }
 
 .container {

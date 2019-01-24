@@ -1,7 +1,14 @@
 // screen resolutions
 $media-desktop: 900px;
 
+// fonts
+$font-family-base: 'Open Sans', sans-serif;
+$font-family-special: 'Henny Penny', cursive;
+
+
 // default elements
+
+$page-title-color: #F5BB00;
 
 //body
 $body-default-background-color: #eee;
@@ -18,3 +25,17 @@ $button-padding: 1em;
 //default footer
 $footer-text-color: #666;
 $footer-link-color: #666;
+
+// animals
+$dog: url('~imagesPath/animals/dog.svg');
+$cow: url('~imagesPath/animals/cow.svg');
+$dove: url('~imagesPath/animals/dove.svg');
+$frog: url('~imagesPath/animals/frog.svg');
+$pig: url('~imagesPath/animals/pig.svg');
+$snake: url('~imagesPath/animals/snake.svg');
+$cat: url('~imagesPath/animals/cat.svg');
+$dolphin: url('~imagesPath/animals/dolphin.svg');
+$duck: url('~imagesPath/animals/duck.svg');
+$monkey: url('~imagesPath/animals/monkey.svg');
+$owl: url('~imagesPath/animals/owl.svg');
+$lion: url('~imagesPath/animals/lion.svg');

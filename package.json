@@ -1,44 +1,56 @@
 {
   "name": "animals",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A simple app to teach children about animals and their sounds",
+  "main": "index.html",
   "scripts": {
-    "start": "node ./bin/www",
-    "bundle": "webpack-dev-server ./src/js/app-src.js"
+    "build": "NODE_ENV=production webpack --mode production",
+    "build-dev": "NODE_ENV=development webpack --mode development",
+    "dev": "NODE_ENV=development webpack-dev-server --open --mode development"
   },
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.0",
-    "express": "^4.16.4",
-    "jade": "~1.11.0",
-    "morgan": "^1.9.1",
-    "node-sass-middleware": "0.9.8",
-    "serve-favicon": "^2.5.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavocardoso/animals.git"
   },
+  "keywords": [
+    "animals",
+    "sound",
+    "teach",
+    "children",
+    "javascript",
+    "css",
+    "html"
+  ],
+  "author": "Gustavo Cardoso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavocardoso/animals/issues"
+  },
+  "homepage": "https://github.com/gustavocardoso/animals#readme",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "7.1.2",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-latest": "6.24.1",
-    "eslint": "4.15.0",
-    "eslint-config-standard": "11.0.0-beta.0",
-    "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-node": "5.2.1",
-    "eslint-plugin-promise": "3.6.0",
-    "eslint-plugin-standard": "3.0.1",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-clean-css": "^3.0.2",
-    "gulp-eslint": "4.0.1",
-    "gulp-notify": "^3.0.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-size": "^2.1.0",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-util": "^3.0.8",
-    "gulp-webpack": "1.5.0",
-    "path": "^0.12.7",
-    "webpack": "3.10.0",
-    "webpack-stream": "4.0.0"
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "autoprefixer": "^9.4.5",
+    "babel-loader": "^8.0.5",
+    "babel-polyfill": "^6.26.0",
+    "clean-webpack-plugin": "^1.0.0",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "i": "^0.3.6",
+    "img-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "node-sass-utils": "^1.1.2",
+    "npm": "^6.6.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   }
 }

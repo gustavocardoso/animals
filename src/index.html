@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animals</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Henny+Penny|Open+Sans:300,400,600,700,800">
+</head>
+<body>
+  <div class="container" data-window="main">
+    <span class="loader">loading...</span>
+  </div>
+
+  <section class="intro" data-window="canvas">
+    <div class="text-container">
+      <h1 class="page-title">The Animals</h1>
+      <button type="submit" class="start-app">[ press here or hit "<strong>space</strong>" ]</button>
+    </div>
+  </section>
+
+  <section class="app" data-window="canvas">
+    <h1 class="page-title">The Animals</h1>
+
+    <section class="animal">
+      <div class="thumb-box">
+        <p class="instructions">Press shuffle button to <span>start</span></p>
+      </div>
+
+      <audio class="player-word">
+        <source src="public/audio/animals.mp3" type="audio/mpeg">
+        <source src="public/audio/animals.ogg" type="audio/ogg">
+      </audio>
+
+      <audio class="player-sound">
+        <source src="public/audio/sounds-160.mp3" type="audio/mpeg">
+        <source src="public/audio/sounds-160.ogg" type="audio/ogg">
+      </audio>
+
+      <h2 class="name">Welcome</h2>
+    </section>
+
+    <section class="controls">
+      <div class="control-button">
+        <button class="play disabled"><span class="icon-play"></span></button>
+        <div class="button-text">Play</div>
+      </div>
+
+      <div class="control-button">
+        <button class="shuffle disabled"><span class="icon-refresh"></span></button>
+        <div class="button-text">Shuffle</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="author">
+        By <a href="http://github.com/gustavocardoso">Gustavo Cardoso</a>. Developed to my daughter!
+      </p>
+
+      <p class="credits">Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a>
+        from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a> and <a target='_blank' href='https://www.vexels.com/vectors/png-svg/141725/sheep-wool-animal '>
+          Sheep wool animal </a> | Designed by Vexels.com </p>
+    </footer>
+  </section>
+</body>
+</html>
