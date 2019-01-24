@@ -57,7 +57,7 @@ module.exports = {
               name: '[path][name].[ext]?[hash]',
               useRelativePath: true,
               outputPath: 'public/',
-              publicPath: 'public/'
+              publicPath: '../'
             }
           }
         ]
@@ -65,12 +65,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../'
-            }
-          },
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           'sass-loader'
