@@ -10,10 +10,8 @@ const zoo = new Zoo(animals)
 
 class App {
   constructor (name) {
-    this.name = name
     this.started = false
-    this.thumbPath = '/images/animals'
-
+    this.soundReady = false
     this.container = document.querySelector('.animal')
     this.animalName = document.querySelector('.animal .name')
     this.instructions = document.querySelector('.animal .instructions')
@@ -23,7 +21,6 @@ class App {
     this.btnPlay = document.querySelector('.play')
     this.playerWord = document.querySelector('.player-word')
     this.playerSound = document.querySelector('.player-sound')
-    this.soundReady = false
   }
 
   init () {
@@ -108,8 +105,8 @@ class App {
       let oldThumb = this.thumbBox.querySelector('.animal-thumb')
       this.thumbBox.removeChild(oldThumb)
     }
-
-    thumb.setAttribute('src', this.thumbPath + '/' + animal.file + '.svg')
+    
+    thumb.setAttribute('src', animal.file)
     thumb.setAttribute('alt', animal.name)
     thumb.setAttribute('class', 'animal-thumb')
 
@@ -123,23 +120,25 @@ class App {
 
     this.setWord(animal)
 
-    setTimeout(() => {
-      this.playerWord.play()
-    }, 300)
-
     this.setSound(animal)
   }
 
   setWord (animal) {
-    let timeInit = animal.audio.word.start
-    let timeEnd = animal.audio.word.end
+    let synth
 
-    this.playerWord.currentTime = timeInit
+    if ('speechSynthesis' in window) {
+      synth = new SpeechSynthesisUtterance()
+      synth.volume = 1
+      synth.rate = .8
+      synth.lang = 'en-US'
+    }
 
-    this.playerWord.ontimeupdate = () => {
-      if (this.playerWord.currentTime > timeEnd) {
-        this.playerWord.pause()
-      }
+    if (!speechSynthesis.speaking) {
+      synth.text = animal.name
+
+      setTimeout(() => {
+        speechSynthesis.speak(synth)
+      }, 300)
     }
   }
 
@@ -167,6 +166,6 @@ class App {
   }
 }
 
-const myApp = new App('Pet Sounds')
+const myApp = new App()
 
 myApp.init()
