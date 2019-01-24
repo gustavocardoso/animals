@@ -57,7 +57,7 @@ module.exports = {
               name: '[path][name].[ext]?[hash]',
               useRelativePath: true,
               outputPath: 'public/',
-              publicPath: '../'
+              publicPath: 'public/'
             }
           }
         ]
