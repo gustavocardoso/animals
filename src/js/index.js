@@ -100,13 +100,14 @@ class App {
 
   createAnimal (animal, animations, randomAnimation) {
     let thumb = document.createElement('img')
+    let thumbSrc = animal.file.replace('../', 'public/')
 
     if (this.thumbBox.querySelector('.animal-thumb') != null) {
       let oldThumb = this.thumbBox.querySelector('.animal-thumb')
       this.thumbBox.removeChild(oldThumb)
     }
     
-    thumb.setAttribute('src', animal.file)
+    thumb.setAttribute('src', thumbSrc)
     thumb.setAttribute('alt', animal.name)
     thumb.setAttribute('class', 'animal-thumb')
 
