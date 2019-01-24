@@ -107,7 +107,7 @@ class App {
       this.thumbBox.removeChild(oldThumb)
     }
     
-    thumb.setAttribute('src', thumbSrc)
+    thumb.setAttribute('src', animal.file)
     thumb.setAttribute('alt', animal.name)
     thumb.setAttribute('class', 'animal-thumb')
 

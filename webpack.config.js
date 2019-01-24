@@ -52,7 +52,7 @@ module.exports = {
         test: /\.svg$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
               name: '[path][name].[ext]?[hash]',
               useRelativePath: true,
