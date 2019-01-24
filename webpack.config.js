@@ -10,14 +10,13 @@ const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   devtool: 'source-map',
-  entry: './src/js/index.js',
+  entry: ['babel-polyfill', './src/js/index.js'],
   output: {
     filename: 'public/js/[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: ''
   },
   devServer: {
-    contentBase: path.resolve(__dirname, '../src'),
     compress: true,
     port: 9000,
     historyApiFallback: true
