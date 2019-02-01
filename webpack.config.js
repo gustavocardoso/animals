@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
 
 const path = require('path')
 
@@ -112,6 +113,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: devMode ? 'public/css/[name].css' : 'public/css/[name].[hash].css',
       chunkFilename: devMode ? 'public/css/[id].css' : 'public/css/[id].[hash].css'
+    }),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.join(__dirname, 'src/sw.js'),
     })
   ],
   optimization: {

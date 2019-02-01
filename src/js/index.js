@@ -2,6 +2,12 @@ import Screen from './modules/screen'
 import Animals from './modules/animals'
 import Zoo from './modules/zoo'
 
+import runtime from 'serviceworker-webpack-plugin/lib/runtime'
+
+if ('serviceWorker' in navigator) {
+  const registration = runtime.register();
+}
+
 import './assets'
 
 const screen = new Screen()
@@ -19,7 +25,6 @@ class App {
     this.btnStart = document.querySelector('.start-app')
     this.btnShuffle = document.querySelector('.shuffle')
     this.btnPlay = document.querySelector('.play')
-    this.playerWord = document.querySelector('.player-word')
     this.playerSound = document.querySelector('.player-sound')
   }
 
@@ -62,16 +67,12 @@ class App {
   }
 
   shuffle () {
+    // TODO: shuffle only one at a time
     let animations = ['shuffle', 'shuffle-alt']
     let randomAnimation = Math.floor(Math.random() * animations.length)
 
     this.btnPlay.classList.add('disabled')
     this.soundReady = false
-
-    if (!this.playerWord.paused) {
-      this.playerWord.pause()
-      this.playerWord.currentTime = 0
-    }
 
     if (!this.playerSound.paused) {
       this.playerSound.pause()
@@ -116,8 +117,6 @@ class App {
 
     this.thumbBox.classList.remove(animations[randomAnimation])
     this.animalName.classList.remove('fade')
-
-    delete this.playerWord.ontimeupdate
 
     this.setWord(animal)
 
