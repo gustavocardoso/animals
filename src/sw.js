@@ -65,7 +65,6 @@ self.addEventListener('message', event => {
 })
 
 self.addEventListener('fetch', event => {
-  // TODO: cache google fonts
   const request = event.request
 
   if (DEBUG) {
@@ -82,15 +81,6 @@ self.addEventListener('fetch', event => {
   }
 
   const requestUrl = new URL(request.url)
-
-  // Ignore difference origin.
-  if (requestUrl.origin !== location.origin) {
-    if (DEBUG) {
-      console.log(`[SW]: Ignore difference origin ${requestUrl.origin}`)
-    }
-
-    return
-  }
 
   const resource = global.caches.match(request)
     .then(response => {
@@ -148,4 +138,3 @@ self.addEventListener('fetch', event => {
 
     event.respondWith(resource)
 })
-

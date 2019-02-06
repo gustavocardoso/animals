@@ -5,6 +5,8 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
 
+require('babel-polyfill')
+
 const path = require('path')
 
 const devMode = process.env.NODE_ENV !== 'production'
