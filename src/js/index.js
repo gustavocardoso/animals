@@ -17,6 +17,7 @@ class App {
   constructor (name) {
     this.started = false
     this.soundReady = false
+    this.isShuffling = false
     this.container = document.querySelector('.animal')
     this.animalName = document.querySelector('.animal .name')
     this.instructions = document.querySelector('.animal .instructions')
@@ -46,11 +47,11 @@ class App {
       }
     } else if (event.keyCode === 83) {
       if (this.started) {
-        this.shuffle()
+        this.btnShuffle.click()
       }
     } else if (event.keyCode === 80) {
       if (this.started && this.soundReady) {
-        this.playerSound.play()
+        this.btnPlay.click()
       }
     }
   }
@@ -66,41 +67,46 @@ class App {
   }
 
   shuffle () {
-    // TODO: shuffle only one at a time
-    let animations = ['shuffle', 'shuffle-alt']
-    let randomAnimation = Math.floor(Math.random() * animations.length)
+    if (!this.isShuffling) {
+      let animations = ['shuffle', 'shuffle-alt']
+      let randomAnimation = Math.floor(Math.random() * animations.length)
 
-    this.btnPlay.classList.add('disabled')
-    this.soundReady = false
+      this.isShuffling = true
+      this.btnShuffle.classList.add('disabled')
+      this.btnPlay.classList.add('disabled')
+      this.soundReady = false
 
-    if (!this.playerSound.paused) {
-      this.playerSound.pause()
-      this.playerSound.currentTime = 0
+      if (!this.playerSound.paused) {
+        this.playerSound.pause()
+        this.playerSound.currentTime = 0
+      }
+
+      if (document.querySelector('.animal .instructions') !== null) {
+        this.thumbBox.removeChild(this.instructions)
+      }
+
+      let thumb = document.querySelector('.animal-thumb')
+
+      if (thumb != null) {
+        this.thumbBox.removeChild(thumb)
+      }
+
+      this.thumbBox.classList.add(animations[randomAnimation])
+      this.animalName.classList.add('fade')
+
+      let animal = zoo.getRandomAnimal()
+
+      setTimeout(() => {
+        this.thumbBox.addEventListener('animationend', this.createAnimal(animal, animations, randomAnimation), false)
+        this.btnShuffle.classList.remove('disabled')
+        this.isShuffling = false
+      }, 300)
     }
-
-    if (document.querySelector('.animal .instructions') !== null) {
-      this.thumbBox.removeChild(this.instructions)
-    }
-
-    let thumb = document.querySelector('.animal-thumb')
-
-    if (thumb != null) {
-      this.thumbBox.removeChild(thumb)
-    }
-
-    this.thumbBox.classList.add(animations[randomAnimation])
-    this.animalName.classList.add('fade')
-
-    let animal = zoo.getRandomAnimal()
-
-    setTimeout(() => {
-      this.thumbBox.addEventListener('animationend', this.createAnimal(animal, animations, randomAnimation), false)
-    }, 300)
   }
 
   createAnimal (animal, animations, randomAnimation) {
     let thumb = document.createElement('img')
-    let thumbSrc = animal.file.replace('../', 'public/')
+    // let thumbSrc = animal.file.replace('../', 'public/')
 
     if (this.thumbBox.querySelector('.animal-thumb') != null) {
       let oldThumb = this.thumbBox.querySelector('.animal-thumb')
@@ -118,7 +124,6 @@ class App {
     this.animalName.classList.remove('fade')
 
     this.setWord(animal)
-
     this.setSound(animal)
   }
 
@@ -144,7 +149,7 @@ class App {
   setSound (animal) {
     let timeInit = animal.audio.sound.start
     let timeEnd = animal.audio.sound.end
-    
+
     this.playerSound.currentTime = timeInit
     this.btnPlay.classList.remove('disabled')
 
