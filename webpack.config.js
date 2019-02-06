@@ -4,6 +4,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
+const WebpackPwaManifest = require('webpack-pwa-manifest')
 
 require('babel-polyfill')
 
@@ -108,6 +109,30 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
+    new WebpackPwaManifest({
+      name: 'Animals',
+      short_name: 'Animals',
+      description: 'A simple app to teach babies about animals and its sounds',
+      background_color: '#eeeeee',
+      theme_color: '#8ea604',
+      ios: {
+        'apple-mobile-web-app-title': 'Animals',
+        'apple-mobile-web-app-status-bar-style': '#8ea604'
+      },
+      display: "standalone",
+      orientation: 'any',
+      inject: true,
+      fingerprints: false,
+      start_url: '.',
+      crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+      icons: [
+        {
+          src: path.resolve('images/icons/icon.png'),
+          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+          destination: 'public/images/icons/'
+        }
+      ]
+    }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html'
