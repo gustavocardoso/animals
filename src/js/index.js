@@ -1,14 +1,13 @@
 import Screen from './modules/screen'
 import Animals from './modules/animals'
 import Zoo from './modules/zoo'
+import './assets'
 
 import runtime from 'serviceworker-webpack-plugin/lib/runtime'
 
 if ('serviceWorker' in navigator) {
   const registration = runtime.register();
 }
-
-import './assets'
 
 const screen = new Screen()
 const animals = Animals
@@ -145,7 +144,7 @@ class App {
   setSound (animal) {
     let timeInit = animal.audio.sound.start
     let timeEnd = animal.audio.sound.end
-
+    
     this.playerSound.currentTime = timeInit
     this.btnPlay.classList.remove('disabled')
 
