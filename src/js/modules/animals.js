@@ -22,7 +22,7 @@ import owl from 'imagesPath/animals/owl.svg'
 import pig from 'imagesPath/animals/pig.svg'
 import rooster from 'imagesPath/animals/rooster.svg'
 import sheep from 'imagesPath/animals/sheep.svg'
-import snake from 'imagesPath/animals/dog.svg'
+import snake from 'imagesPath/animals/snake.svg'
 
 export default [
   {
@@ -31,7 +31,7 @@ export default [
     audio: {
       sound: {
         start: 0,
-        end: 3.000
+        end: 3.0
       }
     }
   },
@@ -41,7 +41,7 @@ export default [
     audio: {
       sound: {
         start: 4.041,
-        end: 7.800
+        end: 7.8
       }
     }
   },
@@ -60,7 +60,7 @@ export default [
     file: cat,
     audio: {
       sound: {
-        start: 12.000,
+        start: 12.0,
         end: 15.002
       }
     }
@@ -101,7 +101,7 @@ export default [
     audio: {
       sound: {
         start: 24.444,
-        end: 26.260
+        end: 26.26
       }
     }
   },
@@ -111,7 +111,7 @@ export default [
     audio: {
       sound: {
         start: 26.993,
-        end: 28.380
+        end: 28.38
       }
     }
   },
@@ -121,7 +121,7 @@ export default [
     audio: {
       sound: {
         start: 29.285,
-        end: 30.440
+        end: 30.44
       }
     }
   },
@@ -131,7 +131,7 @@ export default [
     audio: {
       sound: {
         start: 31.278,
-        end: 32.470
+        end: 32.47
       }
     }
   },
@@ -141,7 +141,7 @@ export default [
     audio: {
       sound: {
         start: 33.451,
-        end: 35.700
+        end: 35.7
       }
     }
   },
@@ -150,7 +150,7 @@ export default [
     file: goat,
     audio: {
       sound: {
-        start: 36.500,
+        start: 36.5,
         end: 37.936
       }
     }
@@ -161,7 +161,7 @@ export default [
     audio: {
       sound: {
         start: 38.792,
-        end: 40.380
+        end: 40.38
       }
     }
   },
@@ -171,7 +171,7 @@ export default [
     audio: {
       sound: {
         start: 41.333,
-        end: 42.860
+        end: 42.86
       }
     }
   },
@@ -180,7 +180,7 @@ export default [
     file: horse,
     audio: {
       sound: {
-        start: 44.000,
+        start: 44.0,
         end: 47.235
       }
     }
@@ -190,7 +190,7 @@ export default [
     file: lion,
     audio: {
       sound: {
-        start: 48.030,
+        start: 48.03,
         end: 51.025
       }
     }
@@ -201,7 +201,7 @@ export default [
     audio: {
       sound: {
         start: 52.004,
-        end: 53.700
+        end: 53.7
       }
     }
   },
@@ -210,7 +210,7 @@ export default [
     file: monkey,
     audio: {
       sound: {
-        start: 54.500,
+        start: 54.5,
         end: 55.958
       }
     }
@@ -250,7 +250,7 @@ export default [
     file: rooster,
     audio: {
       sound: {
-        start: 68.850,
+        start: 68.85,
         end: 71.457
       }
     }
@@ -260,7 +260,7 @@ export default [
     file: sheep,
     audio: {
       sound: {
-        start: 72.670,
+        start: 72.67,
         end: 73.813
       }
     }
@@ -270,8 +270,8 @@ export default [
     file: snake,
     audio: {
       sound: {
-        start: 75.000,
-        end: 77.900
+        start: 75.0,
+        end: 77.9
       }
     }
   }
