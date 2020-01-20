@@ -6,7 +6,7 @@ import './assets'
 import runtime from 'serviceworker-webpack-plugin/lib/runtime'
 
 if ('serviceWorker' in navigator) {
-  const registration = runtime.register();
+  const registration = runtime.register()
 }
 
 const screen = new Screen()
@@ -33,11 +33,15 @@ class App {
 
     window.addEventListener('keyup', this.manageKeyEvents.bind(this), false)
 
-    this.btnStart.addEventListener('click', () => {
-      if (!this.started) {
-        this.start()
-      }
-    }, false)
+    this.btnStart.addEventListener(
+      'click',
+      () => {
+        if (!this.started) {
+          this.start()
+        }
+      },
+      false
+    )
   }
 
   manageKeyEvents (event) {
@@ -61,9 +65,13 @@ class App {
 
     screen.start()
 
-    this.btnShuffle.addEventListener('click', () => {
-      this.shuffle()
-    }, false)
+    this.btnShuffle.addEventListener(
+      'click',
+      () => {
+        this.shuffle()
+      },
+      false
+    )
   }
 
   shuffle () {
@@ -97,7 +105,11 @@ class App {
       let animal = zoo.getRandomAnimal()
 
       setTimeout(() => {
-        this.thumbBox.addEventListener('animationend', this.createAnimal(animal, animations, randomAnimation), false)
+        this.thumbBox.addEventListener(
+          'animationend',
+          this.createAnimal(animal, animations, randomAnimation),
+          false
+        )
         this.btnShuffle.classList.remove('disabled')
         this.isShuffling = false
       }, 300)
@@ -112,7 +124,7 @@ class App {
       let oldThumb = this.thumbBox.querySelector('.animal-thumb')
       this.thumbBox.removeChild(oldThumb)
     }
-    
+
     thumb.setAttribute('src', animal.file)
     thumb.setAttribute('alt', animal.name)
     thumb.setAttribute('class', 'animal-thumb')
@@ -133,8 +145,12 @@ class App {
     if ('speechSynthesis' in window) {
       synth = new SpeechSynthesisUtterance()
       synth.volume = 1
-      synth.rate = .8
+      synth.rate = 0.8
       synth.lang = 'en-US'
+
+      speechSynthesis.getVoices().forEach(voice => {
+        console.log(voice.name, voice.lang, voice.localService)
+      })
     }
 
     if (!speechSynthesis.speaking) {
