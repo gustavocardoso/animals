@@ -8,7 +8,7 @@
     "build-dev": "NODE_ENV=development webpack --mode development",
     "dev": "NODE_ENV=development webpack-dev-server --open --mode development",
     "prod": "http-server dist/. -c0",
-    "generate-audio": "node src/js/tasks/generate-names.js"
+    "generate-audio": "NODE_ENV=production webpack --mode production --config webpack-audio.config.js"
   },
   "repository": {
     "type": "git",
@@ -30,9 +30,10 @@
   },
   "homepage": "https://github.com/gustavocardoso/animals#readme",
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
-    "autoprefixer": "^9.4.5",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@google-cloud/text-to-speech": "^2.1.2",
+    "autoprefixer": "^9.7.4",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-polyfill": "^6.26.0",
@@ -44,18 +45,18 @@
     "i": "^0.3.6",
     "img-loader": "^3.0.1",
     "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "node-sass-utils": "^1.1.2",
-    "npm": "^6.11.3",
+    "npm": "^6.13.6",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
-    "sass-loader": "^7.1.0",
-    "uglifyjs-webpack-plugin": "^2.1.1",
+    "sass-loader": "^7.3.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^1.1.2",
-    "webpack": "^4.35.2",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14",
-    "webpack-pwa-manifest": "^4.0.0"
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
+    "webpack-pwa-manifest": "^4.1.1"
   },
   "dependencies": {
     "serviceworker-webpack-plugin": "^1.0.1"
