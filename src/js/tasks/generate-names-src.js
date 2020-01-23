@@ -10,8 +10,7 @@ async function generateAudioFile(animal) {
   const request = {
     input: { text },
     voice: { languageCode: 'en-US-Standard-C', ssmlGender: 'FEMALE' },
-    audioConfig: { audioEncoding: 'MP3' },
-    key: 'AIzaSyArP2fpbMlPaNxkluVTfA7VxFAHbyc1wQo'
+    audioConfig: { audioEncoding: 'MP3' }
   }
   const [response] = await client.synthesizeSpeech(request)
   const writeFile = util.promisify(fs.writeFile)
