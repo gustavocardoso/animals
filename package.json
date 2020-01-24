@@ -8,9 +8,7 @@
     "build-dev": "NODE_ENV=development webpack --mode development",
     "dev": "NODE_ENV=development webpack-dev-server --open --mode development",
     "prod": "http-server dist/. -c0",
-    "audio": "NODE_ENV=production webpack --mode production --config webpack-audio.config.js",
-    "audio-watch": "NODE_ENV=production webpack --mode production --config webpack-audio.config.js --watch",
-    "start": "npm run dev & npm run audio-watch"
+    "generate-audio": "node src/js/tasks/generate-names-audio-files.js"
   },
   "repository": {
     "type": "git",
@@ -59,7 +57,8 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1",
-    "webpack-pwa-manifest": "^4.1.1"
+    "webpack-pwa-manifest": "^4.1.1",
+    "yurnalist": "^2.0.0"
   },
   "dependencies": {
     "serviceworker-webpack-plugin": "^1.0.1"
