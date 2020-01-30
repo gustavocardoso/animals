@@ -14,7 +14,7 @@ const animals = Animals
 const zoo = new Zoo(animals)
 
 class App {
-  constructor (name) {
+  constructor(name) {
     this.started = false
     this.soundReady = false
     this.isShuffling = false
@@ -28,7 +28,7 @@ class App {
     this.playerSound = document.querySelector('.player-sound')
   }
 
-  init () {
+  init() {
     screen.init()
 
     window.addEventListener('keyup', this.manageKeyEvents.bind(this), false)
@@ -44,7 +44,7 @@ class App {
     )
   }
 
-  manageKeyEvents (event) {
+  manageKeyEvents(event) {
     if (event.keyCode === 32) {
       if (!this.started) {
         this.start()
@@ -60,7 +60,7 @@ class App {
     }
   }
 
-  start () {
+  start() {
     this.started = true
 
     screen.start()
@@ -74,7 +74,7 @@ class App {
     )
   }
 
-  shuffle () {
+  shuffle() {
     if (!this.isShuffling) {
       let animations = ['shuffle', 'shuffle-alt']
       let randomAnimation = Math.floor(Math.random() * animations.length)
@@ -116,7 +116,7 @@ class App {
     }
   }
 
-  createAnimal (animal, animations, randomAnimation) {
+  createAnimal(animal, animations, randomAnimation) {
     let thumb = document.createElement('img')
     // let thumbSrc = animal.file.replace('../', 'public/')
 
@@ -139,7 +139,7 @@ class App {
     this.setSound(animal)
   }
 
-  setWord (animal) {
+  setWord(animal) {
     let synth
 
     if ('speechSynthesis' in window) {
@@ -162,7 +162,7 @@ class App {
     }
   }
 
-  setSound (animal) {
+  setSound(animal) {
     let timeInit = animal.audio.sound.start
     let timeEnd = animal.audio.sound.end
 

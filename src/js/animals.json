@@ -1,0 +1,227 @@
+[
+  {
+    "name": "Bear",
+    "audio": {
+      "sound": {
+        "start": 0,
+        "end": 3.0
+      }
+    }
+  },
+  {
+    "name": "Bird",
+    "audio": {
+      "sound": {
+        "start": 4.041,
+        "end": 7.8
+      }
+    }
+  },
+  {
+    "name": "Camel",
+    "audio": {
+      "sound": {
+        "start": 8.788,
+        "end": 11.284
+      }
+    }
+  },
+  {
+    "name": "Cat",
+    "audio": {
+      "sound": {
+        "start": 12.0,
+        "end": 15.002
+      }
+    }
+  },
+  {
+    "name": "Chicken",
+    "audio": {
+      "sound": {
+        "start": 16.005,
+        "end": 17.829
+      }
+    }
+  },
+  {
+    "name": "Cow",
+    "audio": {
+      "sound": {
+        "start": 18.868,
+        "end": 21.205
+      }
+    }
+  },
+  {
+    "name": "Dog",
+    "audio": {
+      "sound": {
+        "start": 21.996,
+        "end": 23.737
+      }
+    }
+  },
+  {
+    "name": "Dolphin",
+    "audio": {
+      "sound": {
+        "start": 24.444,
+        "end": 26.26
+      }
+    }
+  },
+  {
+    "name": "Dove",
+    "audio": {
+      "sound": {
+        "start": 26.993,
+        "end": 28.38
+      }
+    }
+  },
+  {
+    "name": "Duck",
+    "audio": {
+      "sound": {
+        "start": 29.285,
+        "end": 30.44
+      }
+    }
+  },
+  {
+    "name": "Elephant",
+    "audio": {
+      "sound": {
+        "start": 31.278,
+        "end": 32.47
+      }
+    }
+  },
+  {
+    "name": "Frog",
+    "audio": {
+      "sound": {
+        "start": 33.451,
+        "end": 35.7
+      }
+    }
+  },
+  {
+    "name": "Goat",
+    "audio": {
+      "sound": {
+        "start": 36.5,
+        "end": 37.936
+      }
+    }
+  },
+  {
+    "name": "Goose",
+    "audio": {
+      "sound": {
+        "start": 38.792,
+        "end": 40.38
+      }
+    }
+  },
+  {
+    "name": "Hamster",
+    "audio": {
+      "sound": {
+        "start": 41.333,
+        "end": 42.86
+      }
+    }
+  },
+  {
+    "name": "Horse",
+    "audio": {
+      "sound": {
+        "start": 44.0,
+        "end": 47.235
+      }
+    }
+  },
+  {
+    "name": "Lion",
+    "audio": {
+      "sound": {
+        "start": 48.03,
+        "end": 51.025
+      }
+    }
+  },
+  {
+    "name": "Macaw",
+    "audio": {
+      "sound": {
+        "start": 52.004,
+        "end": 53.7
+      }
+    }
+  },
+  {
+    "name": "Monkey",
+    "audio": {
+      "sound": {
+        "start": 54.5,
+        "end": 55.958
+      }
+    }
+  },
+  {
+    "name": "Mouse",
+    "audio": {
+      "sound": {
+        "start": 56.935,
+        "end": 60.033
+      }
+    }
+  },
+  {
+    "name": "Owl",
+    "audio": {
+      "sound": {
+        "start": 61.072,
+        "end": 64.274
+      }
+    }
+  },
+  {
+    "name": "Pig",
+    "audio": {
+      "sound": {
+        "start": 65.287,
+        "end": 67.704
+      }
+    }
+  },
+  {
+    "name": "Rooster",
+    "audio": {
+      "sound": {
+        "start": 68.85,
+        "end": 71.457
+      }
+    }
+  },
+  {
+    "name": "Sheep",
+    "audio": {
+      "sound": {
+        "start": 72.67,
+        "end": 73.813
+      }
+    }
+  },
+  {
+    "name": "Snake",
+    "audio": {
+      "sound": {
+        "start": 75.0,
+        "end": 77.9
+      }
+    }
+  }
+]
