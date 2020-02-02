@@ -25,7 +25,9 @@ class App {
     this.btnStart = document.querySelector('.start-app')
     this.btnShuffle = document.querySelector('.shuffle')
     this.btnPlay = document.querySelector('.play')
+    this.btnPlayWord = document.querySelector('.play-word')
     this.playerSound = document.querySelector('.player-sound')
+    this.playerWord = null
   }
 
   init() {
@@ -89,6 +91,11 @@ class App {
         this.playerSound.currentTime = 0
       }
 
+      if (this.playerWord !== null && !this.playerWord.paused) {
+        this.playerWord.pause()
+        this.playerWord.remove()
+      }
+
       if (document.querySelector('.animal .instructions') !== null) {
         this.thumbBox.removeChild(this.instructions)
       }
@@ -118,7 +125,6 @@ class App {
 
   createAnimal(animal, animations, randomAnimation) {
     let thumb = document.createElement('img')
-    // let thumbSrc = animal.file.replace('../', 'public/')
 
     if (this.thumbBox.querySelector('.animal-thumb') != null) {
       let oldThumb = this.thumbBox.querySelector('.animal-thumb')
@@ -140,26 +146,13 @@ class App {
   }
 
   setWord(animal) {
-    let synth
+    const animalName = animal.name.toLowerCase()
 
-    if ('speechSynthesis' in window) {
-      synth = new SpeechSynthesisUtterance()
-      synth.volume = 1
-      synth.rate = 0.8
-      synth.lang = 'en-US'
-
-      speechSynthesis.getVoices().forEach(voice => {
-        console.log(voice.name, voice.lang, voice.localService)
-      })
-    }
-
-    if (!speechSynthesis.speaking) {
-      synth.text = animal.name
-
-      setTimeout(() => {
-        speechSynthesis.speak(synth)
-      }, 300)
-    }
+    this.playerWord = document.createElement('audio')
+    this.playerWord.setAttribute('src', `public/audio/names/${animalName}.mp3`)
+    this.playerWord.setAttribute('class', 'player-word')
+    this.container.append(this.playerWord)
+    this.playerWord.play()
   }
 
   setSound(animal) {
