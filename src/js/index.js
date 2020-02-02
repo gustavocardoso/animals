@@ -91,8 +91,10 @@ class App {
         this.playerSound.currentTime = 0
       }
 
-      if (this.playerWord !== null && !this.playerWord.paused) {
-        this.playerWord.pause()
+      if (this.playerWord !== null) {
+        if (!this.playerWord.paused) {
+          this.playerWord.pause()
+        }
         this.playerWord.remove()
       }
 
@@ -147,10 +149,18 @@ class App {
 
   setWord(animal) {
     const animalName = animal.name.toLowerCase()
+    const mp3File = `public/audio/names/${animalName}.mp3`
+    const oggFile = `public/audio/names/${animalName}.ogg`
+    const mp3AudioSurce = document.createElement('source')
+    const oggAudioSurce = document.createElement('source')
+
+    mp3AudioSurce.setAttribute('src', mp3File)
+    oggAudioSurce.setAttribute('src', oggFile)
 
     this.playerWord = document.createElement('audio')
-    this.playerWord.setAttribute('src', `public/audio/names/${animalName}.mp3`)
     this.playerWord.setAttribute('class', 'player-word')
+    this.playerWord.append(mp3AudioSurce)
+    this.playerWord.append(oggAudioSurce)
     this.container.append(this.playerWord)
     this.playerWord.play()
   }
