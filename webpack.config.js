@@ -1,8 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
 const WebpackPwaManifest = require('webpack-pwa-manifest')
 
@@ -79,24 +80,26 @@ module.exports = {
         test: /fonts\/.{1,}\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'public/fonts/',
-            publicPath: '../fonts/'
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'public/fonts/',
+              publicPath: '../fonts/'
+            }
           }
-        }]
+        ]
       },
       {
         test: /\.(mp3|ogg)$/i,
         use: [
           {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'public/audio/'
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'public/audio/'
+            }
           }
-        }]
+        ]
       },
       {
         test: /\.js$/,
@@ -109,6 +112,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
+    new CopyWebpackPlugin([
+      { from: 'src/audio/names', to: 'public/audio/names' }
+    ]),
     new WebpackPwaManifest({
       name: 'Animals',
       short_name: 'Animals',
@@ -119,7 +125,7 @@ module.exports = {
         'apple-mobile-web-app-title': 'Animals',
         'apple-mobile-web-app-status-bar-style': '#8ea604'
       },
-      display: "standalone",
+      display: 'standalone',
       orientation: 'any',
       inject: true,
       fingerprints: false,
@@ -138,11 +144,15 @@ module.exports = {
       filename: 'index.html'
     }),
     new MiniCssExtractPlugin({
-      filename: devMode ? 'public/css/[name].css' : 'public/css/[name].[hash].css',
-      chunkFilename: devMode ? 'public/css/[id].css' : 'public/css/[id].[hash].css'
+      filename: devMode
+        ? 'public/css/[name].css'
+        : 'public/css/[name].[hash].css',
+      chunkFilename: devMode
+        ? 'public/css/[id].css'
+        : 'public/css/[id].[hash].css'
     }),
     new ServiceWorkerWebpackPlugin({
-      entry: path.join(__dirname, 'src/sw.js'),
+      entry: path.join(__dirname, 'src/sw.js')
     })
   ],
   optimization: {

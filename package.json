@@ -10,7 +10,8 @@
     "build-dev": "NODE_ENV=development webpack --mode development",
     "dev": "NODE_ENV=development webpack-dev-server --open --mode development",
     "prod": "http-server dist/. -c0",
-    "generate-audio": "node src/js/tasks/generate-names-audio-files.js"
+    "generate-audio": "node src/js/tasks/generate-names-audio-files.js",
+    "start": "npm run dev"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^1.0.0",
+    "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^2.1.0",
     "file-loader": "^3.0.1",
     "fluent-ffmpeg": "^2.1.2",

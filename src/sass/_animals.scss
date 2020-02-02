@@ -1,8 +1,8 @@
 .app {
   @extend %basic-screen;
   justify-content: space-between;
-  background: url('~imagesPath/backgrounds/intro-mobile.jpg') center center no-repeat
-    #8ea604;
+  background: url('~imagesPath/backgrounds/intro-mobile.jpg') center center
+    no-repeat #8ea604;
   z-index: 3;
   display: none;
 
@@ -97,6 +97,7 @@
     }
 
     .play,
+    .play-word,
     .shuffle {
       @extend %basic-control-button;
       color: #ccc;
