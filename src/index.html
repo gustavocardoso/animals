@@ -32,32 +32,38 @@
     </section>
 
     <section class="app" data-window="canvas">
-      <h1 class="page-title">The Animals</h1>
+      <div class="app-container">
+        <h1 class="page-title">The Animals</h1>
 
-      <section class="animal">
-        <div class="thumb-box">
-          <p class="instructions">Press shuffle button to <span>start</span></p>
-        </div>
+        <section class="animal">
+          <div class="thumb-box">
+            <p class="instructions">
+              Press shuffle button to <span>start</span>
+            </p>
+          </div>
 
-        <audio class="player-sound">
-          <source src="public/audio/sounds-160.mp3" type="audio/mpeg" />
-          <source src="public/audio/sounds-160.ogg" type="audio/ogg" />
-        </audio>
+          <audio class="player-sound">
+            <source src="public/audio/sounds-160.mp3" type="audio/mpeg" />
+            <source src="public/audio/sounds-160.ogg" type="audio/ogg" />
+          </audio>
 
-        <h2 class="name">Welcome</h2>
-      </section>
+          <h2 class="name">Welcome</h2>
+        </section>
 
-      <section class="controls">
-        <div class="control-button">
-          <button class="play disabled"><span class="icon-play"></span></button>
-          <div class="button-text">Play sound</div>
-        </div>
+        <section class="controls">
+          <div class="control-button">
+            <button class="play disabled">
+              <span class="icon-play"></span>
+            </button>
+            <div class="button-text">Play sound</div>
+          </div>
 
-        <div class="control-button">
-          <button class="shuffle"><span class="icon-refresh"></span></button>
-          <div class="button-text">Shuffle</div>
-        </div>
-      </section>
+          <div class="control-button">
+            <button class="shuffle"><span class="icon-refresh"></span></button>
+            <div class="button-text">Shuffle</div>
+          </div>
+        </section>
+      </div>
     </section>
   </body>
 </html>
