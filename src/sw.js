@@ -1,6 +1,6 @@
 const DEBUG = false
 const { assets } = global.serviceWorkerOption
-const CACHE_NAME = 'app-animals-v2'
+const CACHE_NAME = 'app-animals-v3'
 
 let assetsToCache = [...assets, './']
 
@@ -14,7 +14,8 @@ self.addEventListener('install', event => {
   }
 
   event.waitUntil(
-    global.caches.open(CACHE_NAME)
+    global.caches
+      .open(CACHE_NAME)
       .then(cache => {
         return cache.addAll(assetsToCache)
       })
@@ -36,18 +37,17 @@ self.addEventListener('activate', event => {
   }
 
   event.waitUntil(
-    global.caches.keys()
-      .then(cacheNames => {
-        return Promise.all(
-          cacheNames.map(cacheName => {
-            if (cacheName.indexOf(CACHE_NAME) === 0) {
-              return null
-            }
+    global.caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (cacheName.indexOf(CACHE_NAME) === 0) {
+            return null
+          }
 
-            return global.caches.delete(cacheName)
-          })
-        )
-      })
+          return global.caches.delete(cacheName)
+        })
+      )
+    })
   )
 })
 
@@ -82,59 +82,58 @@ self.addEventListener('fetch', event => {
 
   const requestUrl = new URL(request.url)
 
-  const resource = global.caches.match(request)
-    .then(response => {
-      if (response) {
-        if (DEBUG) {
-          console.log(`[SW]: fetch URL ${requestUrl.href} from cache`)
-        }
-
-        return response
+  const resource = global.caches.match(request).then(response => {
+    if (response) {
+      if (DEBUG) {
+        console.log(`[SW]: fetch URL ${requestUrl.href} from cache`)
       }
 
-      // Load and cache known assets
-      return fetch(request)
-        .then(responseNetwork => {
-          if (!responseNetwork || !responseNetwork.ok) {
-            if (DEBUG) {
-              console.log(
-                `[SW] URL [${requestUrl.toString()}] wrong responseNetwork: ${
-                  responseNetwork.status
-                } ${responseNetwork.type}`
-              )
-            }
+      return response
+    }
 
-            return responseNetwork
-          }
-
+    // Load and cache known assets
+    return fetch(request)
+      .then(responseNetwork => {
+        if (!responseNetwork || !responseNetwork.ok) {
           if (DEBUG) {
-            console.log(`[SW]: URL ${requestUrl.href} fetched`)
+            console.log(
+              `[SW] URL [${requestUrl.toString()}] wrong responseNetwork: ${
+                responseNetwork.status
+              } ${responseNetwork.type}`
+            )
           }
-
-          const responseCache = responseNetwork.clone()
-
-          global.caches
-            .open(CACHE_NAME)
-            .then(cache => {
-              return cache.put(request, responseCache)
-            })
-            .then(() => {
-              if (DEBUG) {
-                console.log(`[SW]: Cache asset: ${requestUrl.href}`)
-              }
-            })
 
           return responseNetwork
-        })
-        .catch(() => {
-          // User is landing on our page.
-          if (event.request.mode === 'navigate') {
-            return global.caches.match('./')
-          }
+        }
 
-          return null
-        })
-    })
+        if (DEBUG) {
+          console.log(`[SW]: URL ${requestUrl.href} fetched`)
+        }
 
-    event.respondWith(resource)
+        const responseCache = responseNetwork.clone()
+
+        global.caches
+          .open(CACHE_NAME)
+          .then(cache => {
+            return cache.put(request, responseCache)
+          })
+          .then(() => {
+            if (DEBUG) {
+              console.log(`[SW]: Cache asset: ${requestUrl.href}`)
+            }
+          })
+
+        return responseNetwork
+      })
+      .catch(() => {
+        // User is landing on our page.
+        if (event.request.mode === 'navigate') {
+          return global.caches.match('./')
+        }
+
+        return null
+      })
+  })
+
+  event.respondWith(resource)
 })
