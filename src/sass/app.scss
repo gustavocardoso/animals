@@ -2,7 +2,6 @@
 
 @import './config';
 
-
 @import './vendor/icomoon';
 
 @import './placeholders/basics';
@@ -14,7 +13,9 @@
 @import './intro';
 @import './animals';
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -36,7 +37,7 @@ body {
   background-image: $body-default-background-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   &:before {
     display: none;
     content: 'mobile';
@@ -58,18 +59,18 @@ h1 {
   z-index: 1;
 
   .main-loading {
-    font-size: .9em;
+    font-size: 0.9em;
     font-weight: 900;
     letter-spacing: 1px;
     color: #333;
-    animation: blink .4s ease infinite alternate;
+    animation: blink 0.4s ease infinite alternate;
   }
 }
 
 .footer {
   @extend %basic-footer;
   color: $footer-text-color;
-  padding: .6em .4em;
+  padding: 0.6em 0.4em;
   background: #111;
   width: 100%;
 
@@ -79,7 +80,7 @@ h1 {
   }
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
   body:before {
     display: none;
     content: 'desktop';

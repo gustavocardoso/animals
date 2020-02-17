@@ -2,7 +2,8 @@
   @extend %basic-screen;
   justify-content: center;
   text-align: center;
-  background: url('~imagesPath/backgrounds/intro-mobile.jpg') center center no-repeat #8EA604;
+  background: url('~imagesPath/backgrounds/intro-mobile.jpg') center center
+    #8ea604;
   padding: 2em;
   z-index: 2;
 
@@ -29,15 +30,15 @@
   }
 
   .page-description {
-    font-size: .7em;
+    font-size: 0.7em;
     color: #333;
     transform: rotate(-1.8deg);
     margin-top: 1em;
   }
 
   .credits {
-    font-size: .44em;
-    color: #BF3100;
+    font-size: 0.44em;
+    color: #bf3100;
     margin-top: 6em;
 
     a {
@@ -47,7 +48,7 @@
   }
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
   .intro {
     background-image: url('~imagesPath/backgrounds/intro.jpg');
 
