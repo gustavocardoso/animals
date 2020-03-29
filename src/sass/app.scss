@@ -12,6 +12,7 @@
 
 @import './intro';
 @import './animals';
+@import './credits';
 
 *,
 *:before,
@@ -34,7 +35,7 @@ html {
 body {
   height: 100%;
   font: normal normal normal 16px/1.4 $font-family-base;
-  background-image: $body-default-background-color;
+  background-color: $body-default-background-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 

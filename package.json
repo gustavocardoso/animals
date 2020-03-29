@@ -66,6 +66,7 @@
     "yurnalist": "^2.0.0"
   },
   "dependencies": {
-    "serviceworker-webpack-plugin": "^1.0.1"
+    "serviceworker-webpack-plugin": "^1.0.1",
+    "txt2audio": "^1.2.0"
   }
 }
